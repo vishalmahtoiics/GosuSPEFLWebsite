@@ -1,0 +1,12 @@
+.lg { min-height: 100dvh; background: #0a0a0b; color: #d9d6cf; font-family: "Neue Montreal", sans-serif; padding: 48px 24px 80px; }
+.lg-inner { max-width: 680px; margin: 0 auto; }
+.lg-back { color: #8a8a8e; text-decoration: none; font-size: 13px; }
+.lg-back:hover { color: #d9ab4d; }
+.lg-kicker { font-family: "Chakra Petch", sans-serif; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #d9ab4d; margin: 28px 0 8px; }
+.lg h1 { color: #efece6; font-size: clamp(28px, 5vw, 38px); margin: 0 0 6px; }
+.lg-updated { color: #8a8a8e; font-size: 13px; margin: 0 0 32px; }
+.lg h2 { color: #efece6; font-size: 18px; margin: 28px 0 10px; }
+.lg p { line-height: 1.7; margin: 0 0 12px; }
+.lg-mail { margin-top: 32px; }
+.lg-mail a, .lg-nav a { color: #d9ab4d; }
+.lg-nav { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 40px; padding-top: 20px; border-top: 1px solid #2a2a2c; font-size: 14px; }

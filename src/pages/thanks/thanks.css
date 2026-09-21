@@ -1,0 +1,18 @@
+.tk {
+  min-height: 100dvh; display: grid; place-items: center;
+  background: #0a0a0b; color: #efece6; padding: 24px;
+  font-family: "Neue Montreal", sans-serif;
+}
+.tk-card { max-width: 520px; text-align: center; display: grid; gap: 16px; justify-items: center; }
+.tk-kicker { font-family: "Chakra Petch", sans-serif; font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #d9ab4d; margin: 0; }
+.tk h1 { font-size: clamp(26px, 5vw, 36px); margin: 0; line-height: 1.15; }
+.tk-body { color: #b8b5ae; line-height: 1.6; margin: 0; }
+.tk-body a { color: #d9ab4d; }
+.tk-actions { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; margin-top: 8px; }
+.tk-btn {
+  font-family: "Chakra Petch", sans-serif; font-size: 13px; letter-spacing: 0.14em;
+  text-transform: uppercase; text-decoration: none; border-radius: 10px; padding: 13px 22px;
+}
+.tk-btn--gold { background: #d9ab4d; color: #131313; }
+.tk-btn--ghost { border: 1px solid #2a2a2c; color: #efece6; }
+.tk-fine { font-size: 12px; color: #8a8a8e; margin: 0; }

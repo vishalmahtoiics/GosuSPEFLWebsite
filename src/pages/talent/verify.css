@@ -1,0 +1,38 @@
+.vf {
+  min-height: 100dvh;
+  background: #0a0a0b;
+  color: #ece7dd;
+  font-family: "Chakra Petch", system-ui, sans-serif;
+  display: grid;
+  place-items: center;
+  padding: 6vw 5vw;
+}
+.vf__card {
+  width: min(520px, 100%);
+  border: 1px solid rgba(217, 171, 77, 0.25);
+  border-radius: 14px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.2));
+  padding: 34px 30px;
+}
+.vf__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  border-radius: 999px;
+}
+.vf__badge--valid { color: #7ee0a6; border: 1px solid rgba(126, 224, 166, 0.4); }
+.vf__badge--revoked { color: #ff8f8f; border: 1px solid rgba(255, 143, 143, 0.4); }
+.vf__name { font-size: 30px; margin: 20px 0 4px; color: #fff; }
+.vf__course { color: #d9ab4d; letter-spacing: 0.04em; margin-bottom: 22px; }
+.vf__row { display: flex; justify-content: space-between; padding: 10px 0; border-top: 1px solid rgba(255, 255, 255, 0.07); font-size: 14px; }
+.vf__row span:first-child { color: rgba(236, 231, 221, 0.55); }
+.vf__note { margin-top: 18px; font-size: 13px; color: rgba(255, 143, 143, 0.8); }
+.vf__muted { color: rgba(236, 231, 221, 0.5); font-size: 13px; margin-top: 26px; }
+.vf__state { color: rgba(236, 231, 221, 0.6); letter-spacing: 0.2em; text-transform: uppercase; font-size: 13px; }
+.vf__qrwrap { margin-top: 24px; display: flex; align-items: center; gap: 14px; }
+.vf__qr { width: 96px; height: 96px; border-radius: 8px; background: #fff; padding: 6px; }
+.vf__qrcap { color: rgba(236, 231, 221, 0.55); font-size: 12px; letter-spacing: 0.06em; }

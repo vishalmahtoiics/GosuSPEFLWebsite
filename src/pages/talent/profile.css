@@ -1,0 +1,87 @@
+.pf {
+  min-height: 100dvh;
+  background: #0a0a0b;
+  color: #ece7dd;
+  font-family: "Chakra Petch", system-ui, sans-serif;
+  padding: 5vw 5vw 12vw;
+  max-width: 820px;
+  margin: 0 auto;
+}
+.pf__state { color: rgba(236, 231, 221, 0.6); font-size: 14px; }
+.pf__back {
+  display: inline-block; color: rgba(236, 231, 221, 0.6); text-decoration: none;
+  font-size: 13px; letter-spacing: 0.06em; margin-bottom: 24px;
+}
+.pf__back:hover { color: #d9ab4d; }
+.pf__notfound { text-align: center; padding: 12vh 0; }
+.pf__notfound h1 { color: #fff; font-size: 26px; margin-bottom: 8px; }
+.pf__notfound p { color: rgba(236, 231, 221, 0.6); margin-bottom: 18px; }
+.pf__hero { display: flex; gap: 20px; align-items: flex-start; flex-wrap: wrap; }
+.pf__avatar {
+  width: 96px; height: 96px; flex: none; border-radius: 16px; overflow: hidden;
+  display: grid; place-items: center; background: rgba(217, 171, 77, 0.12);
+  color: #d9ab4d; font-size: 30px; font-weight: 600;
+}
+.pf__avatar img { width: 100%; height: 100%; object-fit: cover; }
+.pf__heroinfo { min-width: 0; flex: 1 1 260px; }
+.pf__tags { display: flex; gap: 8px; align-items: center; margin-bottom: 6px; }
+.pf__type { font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(236, 231, 221, 0.5); }
+.pf__avail { font-size: 11px; color: #7ee0a6; border: 1px solid rgba(126, 224, 166, 0.4); border-radius: 999px; padding: 2px 9px; }
+.pf__name { font-size: clamp(24px, 5vw, 34px); color: #fff; margin: 0 0 4px; }
+.pf__headline { color: rgba(236, 231, 221, 0.7); font-size: 15px; margin: 0 0 8px; }
+.pf__verified { color: #7ee0a6; font-size: 13px; letter-spacing: 0.03em; margin: 0 0 10px; }
+.pf__facts { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 13px; color: rgba(236, 231, 221, 0.55); }
+.pf__facts span:not(:last-child)::after { content: "·"; margin-left: 14px; color: rgba(236, 231, 221, 0.3); }
+.pf__block { margin-top: 34px; }
+.pf__h2 { font-size: 13px; letter-spacing: 0.16em; text-transform: uppercase; color: rgba(236, 231, 221, 0.55); margin: 0 0 12px; }
+.pf__bio { color: rgba(236, 231, 221, 0.8); line-height: 1.6; font-size: 15px; }
+.pf__chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.pf__chip { font-size: 13px; padding: 5px 11px; border-radius: 999px; background: rgba(255, 255, 255, 0.06); }
+.pf__chip b { color: #d9ab4d; font-weight: 600; text-transform: capitalize; margin-right: 4px; }
+.pf__list { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; font-size: 14px; color: rgba(236, 231, 221, 0.8); }
+.pf__list a { color: #d9ab4d; }
+.pf__muted { color: rgba(236, 231, 221, 0.5); font-size: 13px; }
+.pf__creds { display: grid; gap: 12px; }
+.pf__cred {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+  padding: 16px 18px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(0, 0, 0, 0.2));
+}
+.pf__cred--revoked { border-color: rgba(255, 143, 143, 0.35); }
+.pf__credcourse { color: #fff; font-size: 15px; margin: 0 0 3px; }
+.pf__credmeta { color: rgba(236, 231, 221, 0.55); font-size: 12px; margin: 0; }
+.pf__credrevoked { color: #ff8f8f; font-size: 12px; margin: 4px 0 0; }
+.pf__verify {
+  flex: none; color: #0a0a0b; background: #d9ab4d; text-decoration: none;
+  font-size: 13px; font-weight: 600; padding: 8px 14px; border-radius: 8px; letter-spacing: 0.03em;
+}
+.pf__socials { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 10px; }
+.pf__social {
+  color: #d9ab4d; text-decoration: none; font-size: 13px; text-transform: capitalize;
+  border: 1px solid rgba(217, 171, 77, 0.3); border-radius: 999px; padding: 6px 14px;
+}
+.pf__quotes { display: grid; gap: 12px; margin-top: 12px; }
+.pf__quote { margin: 0; color: rgba(236, 231, 221, 0.8); font-style: italic; font-size: 14px; line-height: 1.5; }
+.pf__quote cite { display: block; margin-top: 4px; color: rgba(236, 231, 221, 0.5); font-style: normal; font-size: 12px; }
+
+.pf__contact { display: grid; gap: 14px; margin-bottom: 10px; }
+.pf__contactrow { display: grid; gap: 14px; grid-template-columns: 1fr 1fr; }
+.pf__contactfield { display: grid; gap: 6px; }
+.pf__contactlabel { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(236, 231, 221, 0.55); }
+.pf__contactinput, .pf__contacttextarea {
+  width: 100%; box-sizing: border-box; padding: 11px 13px; border-radius: 10px;
+  color: #fff; font: inherit; font-size: 14px;
+  border: 1px solid rgba(217, 171, 77, 0.28); background: rgba(255, 255, 255, 0.04);
+}
+.pf__contacttextarea { resize: vertical; }
+.pf__contactbtn {
+  justify-self: start; border: none; border-radius: 10px; background: #d9ab4d; color: #0a0a0b;
+  font: inherit; font-size: 15px; font-weight: 600; letter-spacing: 0.04em; padding: 12px 22px; cursor: pointer;
+}
+.pf__contactbtn:disabled { opacity: 0.6; cursor: default; }
+.pf__contactok { color: #7ee0a6; font-size: 13px; margin: 0; }
+.pf__contacterr { color: #ff8f8f; font-size: 13px; margin: 0; }
+.pf__hp { position: absolute; left: -9999px; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+@media (max-width: 560px) {
+  .pf__contactrow { grid-template-columns: 1fr; }
+}

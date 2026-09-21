@@ -1,0 +1,206 @@
+/* Shared primitives for the Valorant course page.
+   Brand tokens (--gold, --ink, --cobalt, fonts) come from index.css.
+   Page-specific layout lives in a.css. */
+
+.vpage {
+  --red: #ff4655;
+  --red-deep: #d5313d;
+  --red-bright: #ff6b76;
+  background: var(--ink);
+  color: #fff;
+  font-family: var(--font-body);
+  overflow: clip;
+}
+
+/* ── kicker ─────────────────────────────────────────── */
+.vk {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.vk--red {
+  color: var(--red);
+}
+.vk--cobalt {
+  color: color-mix(in srgb, var(--cobalt), white 26%);
+}
+
+/* ── buttons (angular clip, matches the homepage language) ── */
+.vbtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font: inherit;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 15px 26px;
+  border: 0;
+  border-radius: 3px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s,
+    border-color 0.3s;
+  clip-path: polygon(
+    9px 0,
+    100% 0,
+    100% calc(100% - 9px),
+    calc(100% - 9px) 100%,
+    0 100%,
+    0 9px
+  );
+}
+.vbtn--sm {
+  padding: 11px 18px;
+  font-size: 12px;
+}
+.vbtn--lg {
+  padding: 19px 38px;
+  font-size: 16px;
+}
+.vbtn--red {
+  background: linear-gradient(135deg, var(--red-bright), var(--red-deep));
+  color: #fff;
+  box-shadow: 0 0 0 rgba(255, 70, 85, 0);
+}
+.vbtn--red:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(255, 70, 85, 0.4);
+}
+.vbtn--gold {
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  color: #15100a;
+}
+.vbtn--gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 40px rgba(217, 171, 77, 0.38);
+}
+.vbtn--ghost {
+  border: 1px solid rgba(255, 255, 255, 0.26);
+  color: #fff;
+}
+.vbtn--ghost:hover {
+  border-color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+/* ── co-brand lockup line ───────────────────────────── */
+.vlockup {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  flex-wrap: wrap;
+}
+.vlockup b {
+  color: #fff;
+  font-weight: 600;
+}
+.vlockup i {
+  color: var(--red);
+  font-style: normal;
+}
+
+/* ── floating A ⇄ B version switcher ────────────────── */
+.vswitch {
+  position: fixed;
+  z-index: 9999;
+  right: 20px;
+  bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px;
+  border-radius: 999px;
+  background: rgba(10, 10, 11, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  font-family: var(--font-mono);
+}
+.vswitch__label {
+  padding: 0 10px 0 8px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+}
+.vswitch__opt {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+  transition: color 0.25s, background 0.25s;
+}
+.vswitch__opt:hover {
+  color: #fff;
+}
+.vswitch__opt.is-active {
+  color: #0a0a0b;
+  background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
+  font-weight: 600;
+}
+.vswitch__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.7;
+}
+
+@media (max-width: 560px) {
+  .vswitch__label,
+  .vswitch__desc {
+    display: none;
+  }
+  .vswitch {
+    bottom: 16px;
+    right: 16px;
+  }
+  .vswitch__opt {
+    padding: 8px 13px;
+  }
+}
+
+/* ── shared footer ──────────────────────────────────── */
+.vfoot {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 40px clamp(20px, 6vw, 90px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.vfoot__brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+.vfoot__disclaimer {
+  max-width: 64ch;
+  font-size: 11.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.38);
+}
+.vfoot__legal { display: flex; gap: 14px; }
+.vfoot__legal a { color: rgba(239, 236, 230, 0.45); text-decoration: none; font-size: 12px; }
+.vfoot__legal a:hover { color: #d9ab4d; }

@@ -1,0 +1,117 @@
+/* ── Shared interaction FX (reticle, spotlight, tilt glare) ───────── */
+
+/* SpotlightCard: a flashlight that follows the cursor inside the card */
+.fx-spot {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.fx-spot::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+  pointer-events: none;
+  background: radial-gradient(
+    300px circle at var(--sx, 50%) var(--sy, 50%),
+    var(--spot, rgba(244, 198, 63, 0.22)),
+    transparent 65%
+  );
+}
+.fx-spot:hover::before {
+  opacity: 1;
+}
+.fx-spot > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* TiltCard glare sheen */
+.fx-tilt__glare {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: inherit;
+  mix-blend-mode: screen;
+}
+
+/* ── FPS reticle cursor ──────────────────────────────────────────── */
+body.fx-reticle-on,
+body.fx-reticle-on * {
+  cursor: none !important;
+}
+
+.fx-reticle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  z-index: 10000;
+  pointer-events: none;
+  transition: opacity 0.25s ease, width 0.22s cubic-bezier(0.16, 1, 0.3, 1),
+    height 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.fx-reticle::before {
+  /* center crosshair ring */
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(244, 198, 63, 0.85);
+  border-radius: 50%;
+  transition: border-color 0.2s, transform 0.2s;
+}
+.fx-reticle__bracket {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border: 1.5px solid var(--gold-bright, #f4c63f);
+  opacity: 0;
+  transition: opacity 0.2s ease, inset 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.fx-reticle__bracket--tl { top: -3px; left: -3px; border-right: 0; border-bottom: 0; }
+.fx-reticle__bracket--tr { top: -3px; right: -3px; border-left: 0; border-bottom: 0; }
+.fx-reticle__bracket--bl { bottom: -3px; left: -3px; border-right: 0; border-top: 0; }
+.fx-reticle__bracket--br { bottom: -3px; right: -3px; border-left: 0; border-top: 0; }
+
+/* locked-on state over interactive elements */
+.fx-reticle.is-locked {
+  width: 56px;
+  height: 56px;
+}
+.fx-reticle.is-locked::before {
+  border-color: rgba(244, 198, 63, 0.25);
+}
+.fx-reticle.is-locked .fx-reticle__bracket {
+  opacity: 1;
+}
+.fx-reticle.is-down {
+  width: 26px;
+  height: 26px;
+}
+
+.fx-reticle__dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--gold-bright, #f4c63f);
+  box-shadow: 0 0 8px rgba(244, 198, 63, 0.8);
+  z-index: 10001;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  will-change: transform;
+}
+
+@media (pointer: coarse) {
+  .fx-reticle,
+  .fx-reticle__dot {
+    display: none;
+  }
+}

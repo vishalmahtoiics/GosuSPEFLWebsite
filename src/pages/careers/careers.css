@@ -1,0 +1,148 @@
+/* ═══════════════════════════════════════════════════════════════
+   Shared components for the two career-track course pages
+   (/coaching and /tournament-ops):
+     1. .crx-loop   — the weekly-loop / operational-loop chip strip
+                      rendered under the curriculum callout
+     2. .crx-ladder — the honest "where it leads" career-rung band
+                      rendered under the pricing grid
+   Both key off the page's --red accent token, so each page tints
+   them automatically (amber on /coaching, blue on /tournament-ops).
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1 ── loop strip ────────────────────────────────────────────── */
+.crx-loop {
+  position: relative;
+  z-index: 1;
+  margin: clamp(32px, 4.5vw, 52px) auto 0;
+  max-width: 1080px;
+  padding: 24px 30px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.02);
+}
+.crx-loop__label {
+  display: block;
+  margin-bottom: 16px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.crx-loop__track {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+.crx-loop__step {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  padding: 10px 16px;
+  border: 1px solid color-mix(in srgb, var(--red) 34%, transparent);
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.86);
+  background: linear-gradient(
+    180deg,
+    color-mix(in srgb, var(--red) 10%, transparent),
+    transparent
+  );
+  white-space: nowrap;
+}
+.crx-loop__step i {
+  font-style: normal;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  color: var(--red);
+}
+.crx-loop__again {
+  font-size: 22px;
+  line-height: 1;
+  color: var(--red);
+  margin-left: 2px;
+}
+
+/* 2 ── career-ladder band ────────────────────────────────────── */
+.crx-ladder {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(28px, 4vw, 44px);
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px 30px;
+  border: 1px solid color-mix(in srgb, var(--red) 42%, transparent);
+  border-radius: 16px;
+  background: linear-gradient(
+    100deg,
+    color-mix(in srgb, var(--red) 10%, transparent),
+    transparent 72%
+  );
+}
+.crx-ladder__tag {
+  flex-shrink: 0;
+  padding-top: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.crx-ladder__main {
+  flex: 1;
+  min-width: 260px;
+}
+.crx-ladder__rungs {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+.crx-ladder__rung {
+  padding: 8px 14px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 10px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.03em;
+  color: rgba(255, 255, 255, 0.72);
+  background: rgba(255, 255, 255, 0.02);
+}
+.crx-ladder__rung.is-here {
+  border-color: color-mix(in srgb, var(--red) 60%, transparent);
+  color: #fff;
+  background: color-mix(in srgb, var(--red) 14%, transparent);
+}
+.crx-ladder__sep {
+  color: var(--red);
+  font-size: 14px;
+  opacity: 0.8;
+}
+.crx-ladder__line {
+  margin-top: 12px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.62);
+}
+@media (max-width: 600px) {
+  .crx-loop,
+  .crx-ladder {
+    padding: 20px;
+  }
+  .crx-loop__step {
+    font-size: 12px;
+    padding: 8px 13px;
+  }
+  .crx-ladder__rung {
+    font-size: 12px;
+  }
+}

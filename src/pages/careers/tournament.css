@@ -1,0 +1,139 @@
+/* ═══════════════════════════════════════════════════════════════
+   Tournament Ops career track — course page. Reuses the shared
+   course-page design system (.vpage + va-* classes from shared.css +
+   a.css) the same way bgmi.css does. This file only:
+     1. re-themes the Valorant-red accent to broadcast blue (the
+        homepage track-card accent, #4fb4ff)
+     2. overrides the decorative red tints hard-coded in a.css
+     3. tunes the shared image slots for the AI concept art in
+        public/tournament/ (blue control-room / arena scenes)
+   Everything is scoped under `.tourney`.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1 ── accent re-theme via the shared tokens ─────────────────── */
+.vpage.tourney {
+  --red: #4fb4ff;
+  --red-deep: #2287d8;
+  --red-bright: #7cc8ff;
+}
+.tourney .vbtn--red {
+  box-shadow: 0 0 0 rgba(79, 180, 255, 0);
+}
+.tourney .vbtn--red:hover {
+  box-shadow: 0 14px 40px rgba(79, 180, 255, 0.4);
+}
+
+/* 2 ── decorative red tints hard-coded in a.css → blue ───────── */
+.tourney .va-mark--big {
+  color: rgba(79, 180, 255, 0.07);
+}
+.tourney .va-cred {
+  background: linear-gradient(180deg, rgba(79, 180, 255, 0.05), transparent);
+}
+.tourney .va-pain__row:hover {
+  background: linear-gradient(90deg, rgba(79, 180, 255, 0.05), transparent 70%);
+}
+.tourney .va-radar {
+  border-color: rgba(79, 180, 255, 0.4);
+  background: linear-gradient(100deg, rgba(79, 180, 255, 0.12), transparent 70%);
+}
+.tourney .va-comp__chip:hover {
+  border-color: rgba(79, 180, 255, 0.5);
+}
+.tourney .va-comp__chip.is-active {
+  background: linear-gradient(180deg, rgba(79, 180, 255, 0.15), transparent);
+}
+.tourney .va-comp__detail {
+  border-color: rgba(79, 180, 255, 0.32);
+  background: linear-gradient(100deg, rgba(79, 180, 255, 0.09), transparent 72%);
+}
+.tourney .va-story:hover {
+  border-color: rgba(79, 180, 255, 0.5);
+}
+.tourney .va-story__scrim {
+  background: linear-gradient(0deg, rgba(10, 10, 11, 0.95) 4%, transparent 60%),
+    radial-gradient(80% 60% at 80% 10%, rgba(79, 180, 255, 0.2), transparent 60%);
+}
+.tourney .va-price__card {
+  border-color: rgba(79, 180, 255, 0.42);
+}
+.tourney .va-price__cardglow {
+  background: radial-gradient(70% 50% at 100% 0%, rgba(79, 180, 255, 0.2), transparent 60%);
+}
+.tourney .va-faq__q:hover {
+  border-color: rgba(79, 180, 255, 0.4);
+}
+.tourney .va-faq__q.is-active {
+  border-color: rgba(79, 180, 255, 0.55);
+  background: linear-gradient(100deg, rgba(79, 180, 255, 0.1), transparent 72%);
+}
+.tourney .va-faq__answer {
+  border-color: rgba(79, 180, 255, 0.28);
+  background: linear-gradient(
+    160deg,
+    rgba(79, 180, 255, 0.07),
+    rgba(255, 255, 255, 0.02) 42%,
+    transparent
+  );
+}
+.tourney .va-final__shade {
+  background: radial-gradient(circle at 50% 40%, rgba(79, 180, 255, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(10, 10, 11, 0.55), rgba(10, 10, 11, 0.82));
+}
+/* hero blue glow, kept low so it cools the art without washing it out */
+.tourney .va-hero__glow {
+  background: radial-gradient(
+    circle at 62% 46%,
+    rgba(79, 180, 255, 0.2),
+    rgba(79, 180, 255, 0.05) 48%,
+    transparent 70%
+  );
+}
+/* hero ping pulse → blue (own keyframe; the a.css one is red) */
+.tourney .va-hero__ping {
+  animation-name: to-ping;
+}
+@keyframes to-ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(79, 180, 255, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 11px rgba(79, 180, 255, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(79, 180, 255, 0);
+  }
+}
+
+/* 3 ── AI concept art: tune the shared image slots ───────────── */
+
+/* hero art is a wide control-room scene over the arena, subject right
+   of centre, opposite the copy */
+.tourney .va-hero__bg img {
+  object-position: 66% center;
+  filter: saturate(1.06) contrast(1.05) brightness(0.58);
+}
+
+/* curriculum: the scene fills the phase panel, tinted by the phase
+   --accent through the panel bg */
+.tourney .va-phase__map {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: grayscale(0.25) saturate(1.05) contrast(1.05) brightness(0.62);
+  mix-blend-mode: normal;
+}
+
+/* instructor frame holds a portrait-cut scene — cover-fit it */
+.tourney .va-coach__art {
+  inset: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: saturate(1.04) contrast(1.03) brightness(0.85);
+}

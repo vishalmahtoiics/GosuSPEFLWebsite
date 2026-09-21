@@ -1,0 +1,61 @@
+.ad {
+  min-height: 100dvh;
+  background: #0a0a0b;
+  color: #ece7dd;
+  font-family: "Chakra Petch", system-ui, sans-serif;
+  padding: 5vw 5vw 12vw;
+  max-width: 960px;
+  margin: 0 auto;
+}
+.ad__state { color: rgba(236, 231, 221, 0.6); font-size: 14px; }
+.ad__eyebrow { color: #d9ab4d; letter-spacing: 0.24em; text-transform: uppercase; font-size: 12px; }
+.ad__title { font-size: clamp(24px, 5vw, 34px); color: #fff; margin: 8px 0; }
+.ad__lede { color: rgba(236, 231, 221, 0.65); font-size: 14px; line-height: 1.5; margin-bottom: 16px; }
+.ad__signin { max-width: 420px; margin: 12vh auto 0; text-align: center; }
+.ad__signinform { display: grid; gap: 12px; }
+.ad__top { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 24px; }
+.ad__tabs { display: flex; gap: 8px; }
+.ad__tab {
+  border: 1px solid rgba(217, 171, 77, 0.3); background: transparent; color: rgba(236, 231, 221, 0.7);
+  border-radius: 999px; padding: 8px 16px; font: inherit; font-size: 13px; cursor: pointer;
+}
+.ad__tab--on { background: #d9ab4d; color: #0a0a0b; border-color: #d9ab4d; font-weight: 600; }
+.ad__panel { display: grid; gap: 20px; }
+.ad__tablewrap { overflow-x: auto; }
+.ad__table { width: 100%; border-collapse: collapse; font-size: 13px; }
+.ad__table th, .ad__table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid rgba(255, 255, 255, 0.08); }
+.ad__table th { color: rgba(236, 231, 221, 0.5); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; }
+.ad__badge {
+  font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; padding: 2px 9px; border-radius: 999px;
+  border: 1px solid rgba(236, 231, 221, 0.25); color: rgba(236, 231, 221, 0.6);
+}
+.ad__badge--published, .ad__badge--routed { color: #7ee0a6; border-color: rgba(126, 224, 166, 0.4); }
+.ad__badge--hidden { color: #ff8f8f; border-color: rgba(255, 143, 143, 0.4); }
+.ad__badge--draft, .ad__badge--new { color: #d9ab4d; border-color: rgba(217, 171, 77, 0.4); }
+.ad__badge--read { color: rgba(236, 231, 221, 0.6); }
+.ad__note { color: #d9ab4d; font-size: 13px; }
+.ad__forms { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+.ad__form { display: grid; gap: 10px; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 16px; }
+.ad__formh { font-size: 12px; letter-spacing: 0.12em; text-transform: uppercase; color: #d9ab4d; margin: 0; }
+.ad__input {
+  width: 100%; box-sizing: border-box; padding: 10px 12px; border-radius: 8px; color: #fff;
+  font: inherit; font-size: 13px; border: 1px solid rgba(217, 171, 77, 0.28); background: rgba(255, 255, 255, 0.04);
+}
+.ad__btn {
+  justify-self: start; border: none; border-radius: 8px; background: #d9ab4d; color: #0a0a0b;
+  font: inherit; font-size: 14px; font-weight: 600; letter-spacing: 0.03em; padding: 10px 18px; cursor: pointer;
+}
+.ad__msgs { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.ad__msg { border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 12px; padding: 14px 16px; display: grid; gap: 8px; }
+.ad__msghead { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.ad__msgfrom { color: #fff; font-size: 14px; }
+.ad__msgmeta { color: rgba(236, 231, 221, 0.55); font-size: 12px; margin: 0; }
+.ad__msgbody { color: rgba(236, 231, 221, 0.85); font-size: 14px; line-height: 1.5; margin: 0; }
+.ad__msgactions { display: flex; gap: 8px; }
+.ad__mini {
+  border: 1px solid rgba(217, 171, 77, 0.4); background: transparent; color: #d9ab4d;
+  border-radius: 8px; padding: 6px 12px; font: inherit; font-size: 12px; cursor: pointer;
+}
+@media (max-width: 560px) {
+  .ad__forms { grid-template-columns: 1fr; }
+}

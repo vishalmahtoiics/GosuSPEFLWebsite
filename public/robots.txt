@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /talent
+Disallow: /verify
+Disallow: /admin
+
+Sitemap: https://gosuacademy.in/sitemap.xml

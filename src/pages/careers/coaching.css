@@ -1,0 +1,150 @@
+/* ═══════════════════════════════════════════════════════════════
+   Coaching career track — course page. Reuses the shared course-page
+   design system (.vpage + va-* classes from shared.css + a.css) the
+   same way bgmi.css does. This file only:
+     1. re-themes the Valorant-red accent to a hot mentor amber
+        (deliberately hotter than the house --gold so the two stay
+        distinguishable when they sit next to each other)
+     2. overrides the decorative red tints hard-coded in a.css
+     3. tunes the shared image slots for the AI concept art in
+        public/coaching/ (wide amber-lit scenes, portrait mentor)
+   Everything is scoped under `.coaching`.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1 ── accent re-theme via the shared tokens ─────────────────── */
+.vpage.coaching {
+  --red: #ffb238;
+  --red-deep: #d98a14;
+  --red-bright: #ffc95e;
+}
+
+/* amber is a light accent — the primary button needs dark text */
+.coaching .vbtn--red {
+  color: #1a1206;
+  box-shadow: 0 0 0 rgba(255, 178, 56, 0);
+}
+.coaching .vbtn--red:hover {
+  box-shadow: 0 14px 40px rgba(255, 178, 56, 0.4);
+}
+
+/* 2 ── decorative red tints hard-coded in a.css → amber ──────── */
+.coaching .va-mark--big {
+  color: rgba(255, 178, 56, 0.06);
+}
+.coaching .va-cred {
+  background: linear-gradient(180deg, rgba(255, 178, 56, 0.05), transparent);
+}
+.coaching .va-pain__row:hover {
+  background: linear-gradient(90deg, rgba(255, 178, 56, 0.05), transparent 70%);
+}
+.coaching .va-radar {
+  border-color: rgba(255, 178, 56, 0.4);
+  background: linear-gradient(100deg, rgba(255, 178, 56, 0.12), transparent 70%);
+}
+.coaching .va-comp__chip:hover {
+  border-color: rgba(255, 178, 56, 0.5);
+}
+.coaching .va-comp__chip.is-active {
+  background: linear-gradient(180deg, rgba(255, 178, 56, 0.15), transparent);
+}
+.coaching .va-comp__detail {
+  border-color: rgba(255, 178, 56, 0.32);
+  background: linear-gradient(100deg, rgba(255, 178, 56, 0.09), transparent 72%);
+}
+.coaching .va-story:hover {
+  border-color: rgba(255, 178, 56, 0.5);
+}
+.coaching .va-story__scrim {
+  background: linear-gradient(0deg, rgba(10, 10, 11, 0.95) 4%, transparent 60%),
+    radial-gradient(80% 60% at 80% 10%, rgba(255, 178, 56, 0.2), transparent 60%);
+}
+.coaching .va-price__card {
+  border-color: rgba(255, 178, 56, 0.42);
+}
+.coaching .va-price__cardglow {
+  background: radial-gradient(70% 50% at 100% 0%, rgba(255, 178, 56, 0.2), transparent 60%);
+}
+.coaching .va-faq__q:hover {
+  border-color: rgba(255, 178, 56, 0.4);
+}
+.coaching .va-faq__q.is-active {
+  border-color: rgba(255, 178, 56, 0.55);
+  background: linear-gradient(100deg, rgba(255, 178, 56, 0.1), transparent 72%);
+}
+.coaching .va-faq__answer {
+  border-color: rgba(255, 178, 56, 0.28);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 178, 56, 0.07),
+    rgba(255, 255, 255, 0.02) 42%,
+    transparent
+  );
+}
+.coaching .va-final__shade {
+  background: radial-gradient(circle at 50% 40%, rgba(255, 178, 56, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(10, 10, 11, 0.55), rgba(10, 10, 11, 0.82));
+}
+/* hero amber glow, kept low so it warms the art without washing it out */
+.coaching .va-hero__glow {
+  background: radial-gradient(
+    circle at 62% 46%,
+    rgba(255, 178, 56, 0.2),
+    rgba(255, 178, 56, 0.05) 48%,
+    transparent 70%
+  );
+}
+/* hero ping pulse → amber (own keyframe; the a.css one is red) */
+.coaching .va-hero__ping {
+  animation-name: co-ping;
+}
+@keyframes co-ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 178, 56, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 11px rgba(255, 178, 56, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 178, 56, 0);
+  }
+}
+
+/* 3 ── AI concept art: tune the shared image slots ───────────── */
+
+/* hero art is a wide coaching-floor scene with the subject right of
+   centre, opposite the copy */
+.coaching .va-hero__bg img {
+  object-position: 70% center;
+  filter: saturate(1.05) contrast(1.04) brightness(0.6);
+}
+
+/* curriculum: the scene fills the phase panel (a.css tucks a minimap
+   in a corner), tinted by the phase --accent through the panel bg */
+.coaching .va-phase__map {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: grayscale(0.25) saturate(1.05) contrast(1.05) brightness(0.62);
+  mix-blend-mode: normal;
+}
+
+/* the training-floor band art is a very dark scene — lift it so the
+   rows of PCs actually read behind the fact strip */
+.coaching .va-how__bg {
+  filter: saturate(1.12) contrast(1.02) brightness(0.92);
+}
+
+/* mentor frame holds a portrait-cut scene (a.css expects a
+   bottom-anchored transparent cut-out) — cover-fit it */
+.coaching .va-coach__art {
+  inset: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 22%;
+  filter: saturate(1.04) contrast(1.03) brightness(0.85);
+}

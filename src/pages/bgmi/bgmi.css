@@ -1,0 +1,196 @@
+/* ═══════════════════════════════════════════════════════════════
+   BGMI — course page. Reuses the shared course-page design system
+   (.vpage + va-* classes from shared.css + a.css). This file only:
+     1. re-themes the Valorant-red accent to battle-royale orange (tokens)
+     2. overrides the decorative red tints hard-coded in a.css
+     3. tunes the shared image slots for the PUBG placeholder art in
+        public/bgmi/ (wide key art in the hero + coach, map minimaps as
+        the curriculum phase backdrops)
+   Everything is scoped under `.bgmi`, so the Valorant page is untouched.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* 1 ── accent re-theme via the shared tokens ─────────────────── */
+.vpage.bgmi {
+  --red: #ff8a2a;
+  --red-deep: #e56a12;
+  --red-bright: #ffa64d;
+  --zone: #39c6ff; /* safe-zone blue, held in reserve for accents */
+}
+
+/* 2 ── decorative red tints hard-coded in a.css → orange ─────── */
+.bgmi .va-mark--big {
+  color: rgba(255, 138, 42, 0.06);
+}
+.bgmi .va-cred {
+  background: linear-gradient(180deg, rgba(255, 138, 42, 0.05), transparent);
+}
+.bgmi .va-pain__row:hover {
+  background: linear-gradient(90deg, rgba(255, 138, 42, 0.05), transparent 70%);
+}
+.bgmi .va-radar {
+  border-color: rgba(255, 138, 42, 0.4);
+  background: linear-gradient(100deg, rgba(255, 138, 42, 0.12), transparent 70%);
+}
+.bgmi .va-comp__chip:hover {
+  border-color: rgba(255, 138, 42, 0.5);
+}
+.bgmi .va-comp__chip.is-active {
+  background: linear-gradient(180deg, rgba(255, 138, 42, 0.15), transparent);
+}
+.bgmi .va-comp__detail {
+  border-color: rgba(255, 138, 42, 0.32);
+  background: linear-gradient(100deg, rgba(255, 138, 42, 0.09), transparent 72%);
+}
+.bgmi .va-story:hover {
+  border-color: rgba(255, 138, 42, 0.5);
+}
+.bgmi .va-story__scrim {
+  background: linear-gradient(0deg, rgba(10, 10, 11, 0.95) 4%, transparent 60%),
+    radial-gradient(80% 60% at 80% 10%, rgba(255, 138, 42, 0.2), transparent 60%);
+}
+.bgmi .va-price__card {
+  border-color: rgba(255, 138, 42, 0.42);
+}
+.bgmi .va-price__cardglow {
+  background: radial-gradient(70% 50% at 100% 0%, rgba(255, 138, 42, 0.2), transparent 60%);
+}
+.bgmi .va-faq__q:hover {
+  border-color: rgba(255, 138, 42, 0.4);
+}
+.bgmi .va-faq__q.is-active {
+  border-color: rgba(255, 138, 42, 0.55);
+  background: linear-gradient(100deg, rgba(255, 138, 42, 0.1), transparent 72%);
+}
+.bgmi .va-faq__answer {
+  border-color: rgba(255, 138, 42, 0.28);
+  background: linear-gradient(
+    160deg,
+    rgba(255, 138, 42, 0.07),
+    rgba(255, 255, 255, 0.02) 42%,
+    transparent
+  );
+}
+.bgmi .va-final__shade {
+  background: radial-gradient(circle at 50% 40%, rgba(255, 138, 42, 0.12), transparent 55%),
+    linear-gradient(180deg, rgba(10, 10, 11, 0.55), rgba(10, 10, 11, 0.82));
+}
+/* hero orange glow, tuned down so it complements the key art rather than
+   washing it out */
+.bgmi .va-hero__glow {
+  background: radial-gradient(
+    circle at 60% 46%,
+    rgba(255, 138, 42, 0.22),
+    rgba(255, 138, 42, 0.05) 48%,
+    transparent 70%
+  );
+}
+/* hero ping pulse → orange (own keyframe; the a.css one is red) */
+.bgmi .va-hero__ping {
+  animation-name: bg-ping;
+}
+@keyframes bg-ping {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 138, 42, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 11px rgba(255, 138, 42, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 138, 42, 0);
+  }
+}
+
+/* 3 ── PUBG placeholder art: tune the shared image slots ─────── */
+
+/* hero key art is a wide scene (soldier centre, squad + drop behind) —
+   push it right so the squad sits opposite the copy, and lift the
+   brightness a touch since a.css darkens it for a portrait cut-out */
+.bgmi .va-hero__bg img {
+  object-position: 68% center;
+  filter: saturate(1.06) contrast(1.05) brightness(0.62);
+}
+
+/* curriculum: the map minimap fills the phase panel (a.css tucks it in a
+   faint corner behind a character portrait we don't have), tinted by the
+   phase --accent showing through from the panel background */
+.bgmi .va-phase__map {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.55;
+  filter: grayscale(0.3) saturate(1.05) contrast(1.05) brightness(0.6);
+  mix-blend-mode: normal;
+}
+
+/* coach frame holds the wide key art (a.css expects a bottom-anchored
+   transparent portrait) — cover-fit and frame the central soldier */
+.bgmi .va-coach__art {
+  inset: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 24%;
+  filter: saturate(1.05) contrast(1.03) brightness(0.85);
+}
+
+/* 4 ── squad-rate band under the pricing grid ────────────────── */
+.bg-squad {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(28px, 4vw, 44px);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px 30px;
+  border: 1px solid color-mix(in srgb, var(--red) 42%, transparent);
+  border-radius: 16px;
+  background: linear-gradient(100deg, rgba(255, 138, 42, 0.1), transparent 72%);
+}
+.bg-squad__tag {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.bg-squad__main {
+  flex: 1;
+  min-width: 220px;
+}
+.bg-squad__main strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+}
+.bg-squad__main p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.62);
+}
+.bg-squad__amt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1;
+  color: var(--red);
+}
+.bg-squad__amt small {
+  font-size: 0.34em;
+  color: rgba(255, 255, 255, 0.5);
+  margin-left: 4px;
+}
+.bgmi .bg-squad__cta {
+  flex-shrink: 0;
+}
+@media (max-width: 600px) {
+  .bg-squad {
+    padding: 20px;
+  }
+}

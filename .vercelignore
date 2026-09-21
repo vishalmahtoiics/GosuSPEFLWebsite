@@ -1,0 +1,7 @@
+# Never upload local secrets.
+.env
+.env.*
+!.env.example
+
+# Tests are not required in the deployment bundle.
+**/*.test.ts
