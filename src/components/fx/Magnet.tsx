@@ -1,6 +1,6 @@
-/* Magnet — pulls its child toward the cursor while the cursor is within a
-   padding zone around it. Great on buttons. */
-import { useState, useRef, useEffect, type ReactNode } from "react";
+/* Magnet — pulls its child gently toward the cursor on hover.
+   Optimized with direct GPU transform manipulation and zero global window listeners. */
+import { useRef, type ReactNode } from "react";
 
 interface MagnetProps {
   children: ReactNode;
@@ -11,49 +11,61 @@ interface MagnetProps {
 
 export default function Magnet({
   children,
-  padding = 70,
   strength = 3.2,
   className = "",
 }: MagnetProps) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [pos, setPos] = useState({ x: 0, y: 0 });
-  const [active, setActive] = useState(false);
+  const innerRef = useRef<HTMLDivElement>(null);
+  const rectRef = useRef<DOMRect | null>(null);
 
-  useEffect(() => {
-    if (!window.matchMedia("(pointer: fine)").matches) return;
-    const onMove = (e: MouseEvent) => {
-      const el = ref.current;
-      if (!el) return;
-      const { left, top, width, height } = el.getBoundingClientRect();
-      const cx = left + width / 2;
-      const cy = top + height / 2;
-      const dx = e.clientX - cx;
-      const dy = e.clientY - cy;
-      if (Math.abs(dx) < width / 2 + padding && Math.abs(dy) < height / 2 + padding) {
-        // keep the pull gentle: cap the offset so it reads as a subtle nudge
-        const max = 7;
-        const clamp = (v: number) => Math.max(-max, Math.min(max, v));
-        setActive(true);
-        setPos({ x: clamp(dx / strength), y: clamp(dy / strength) });
-      } else if (active) {
-        setActive(false);
-        setPos({ x: 0, y: 0 });
-      }
-    };
-    window.addEventListener("mousemove", onMove);
-    return () => window.removeEventListener("mousemove", onMove);
-  }, [padding, strength, active]);
+  const onPointerEnter = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse" && e.pointerType !== "pen") return;
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+    if (innerRef.current) {
+      innerRef.current.style.transition = "transform 0.12s cubic-bezier(0.16, 1, 0.3, 1)";
+    }
+  };
+
+  const onPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType !== "mouse" && e.pointerType !== "pen") return;
+    if (!rectRef.current) {
+      rectRef.current = e.currentTarget.getBoundingClientRect();
+    }
+    const r = rectRef.current;
+    const cx = r.left + r.width / 2;
+    const cy = r.top + r.height / 2;
+    const dx = e.clientX - cx;
+    const dy = e.clientY - cy;
+
+    const max = 7;
+    const clamp = (v: number) => Math.max(-max, Math.min(max, v));
+    const tx = clamp(dx / strength);
+    const ty = clamp(dy / strength);
+
+    if (innerRef.current) {
+      innerRef.current.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+    }
+  };
+
+  const onPointerLeave = () => {
+    rectRef.current = null;
+    if (innerRef.current) {
+      innerRef.current.style.transition = "transform 0.45s cubic-bezier(0.16, 1, 0.3, 1)";
+      innerRef.current.style.transform = "translate3d(0, 0, 0)";
+    }
+  };
 
   return (
     <div
-      ref={ref}
       className={className}
+      onPointerEnter={onPointerEnter}
+      onPointerMove={onPointerMove}
+      onPointerLeave={onPointerLeave}
       style={{ display: "inline-flex" }}
     >
       <div
+        ref={innerRef}
         style={{
-          transform: `translate3d(${pos.x}px, ${pos.y}px, 0)`,
-          transition: `transform ${active ? 0.12 : 0.45}s cubic-bezier(0.16,1,0.3,1)`,
+          transform: "translate3d(0, 0, 0)",
           willChange: "transform",
           display: "inline-flex",
         }}

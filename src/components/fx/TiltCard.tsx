@@ -1,6 +1,6 @@
 /* TiltCard — 3D tilt toward the cursor with a glare sheen and an inner
    spotlight. Combines the "feels 3D" + "cursor is a light" interactions.
-   Children can use transform: translateZ(..) for parallax depth. */
+   Optimized: caches bounding box on pointerenter to avoid synchronous layout reflows. */
 import { useRef, type ReactNode } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "motion/react";
 
@@ -20,6 +20,7 @@ export default function TiltCard({
   glareColor = "rgba(244,198,63,0.28)",
 }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
+  const rectRef = useRef<DOMRect | null>(null);
 
   // -0.5..0.5 normalized cursor position over the card
   const px = useMotionValue(0);
@@ -33,25 +34,38 @@ export default function TiltCard({
   const glareY = useTransform(py, [-0.5, 0.5], ["0%", "100%"]);
   const glareOpacity = useSpring(hover, spring);
 
-  const onMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onEnter = (e: React.PointerEvent<HTMLDivElement>) => {
+    rectRef.current = e.currentTarget.getBoundingClientRect();
+    hover.set(1);
+  };
+
+  const onLeave = () => {
+    rectRef.current = null;
+    hover.set(0);
+    px.set(0);
+    py.set(0);
+  };
+
+  const onMove = (e: React.PointerEvent<HTMLDivElement>) => {
     const el = ref.current;
     if (!el) return;
-    const r = el.getBoundingClientRect();
-    px.set((e.clientX - r.left) / r.width - 0.5);
-    py.set((e.clientY - r.top) / r.height - 0.5);
+    if (!rectRef.current) {
+      rectRef.current = el.getBoundingClientRect();
+    }
+    const r = rectRef.current;
+    if (r.width > 0 && r.height > 0) {
+      px.set((e.clientX - r.left) / r.width - 0.5);
+      py.set((e.clientY - r.top) / r.height - 0.5);
+    }
   };
 
   return (
     <div
       ref={ref}
       className={className}
-      onMouseEnter={() => hover.set(1)}
-      onMouseLeave={() => {
-        hover.set(0);
-        px.set(0);
-        py.set(0);
-      }}
-      onMouseMove={onMove}
+      onPointerEnter={onEnter}
+      onPointerLeave={onLeave}
+      onPointerMove={onMove}
       style={{ perspective: 900 }}
     >
       <motion.div

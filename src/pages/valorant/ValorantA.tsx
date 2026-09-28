@@ -4,6 +4,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Lenis from "lenis";
 import Logo from "../../components/Logo";
+import GosuSpeflLockup from "../../components/GosuSpeflLockup";
+import SocialLinks from "../../components/SocialLinks";
 import Reticle from "../../components/fx/Reticle";
 import ClickSpark from "../../components/fx/ClickSpark";
 import Magnet from "../../components/fx/Magnet";
@@ -13,7 +15,7 @@ import ScrambleText from "../../components/fx/ScrambleText";
 import Certificate from "../../components/Certificate";
 import "../../components/fx/fx.css";
 import { CheckoutProvider, useCheckoutPanel } from "../../checkout/CheckoutContext";
-import { DISCORD_URL } from "../../lib/links";
+import { DISCORD_URL, INSTAGRAM_URL } from "../../lib/links";
 import * as VC from "../../valorantContent";
 import { useI18n, useLocalized, LangToggle } from "../../i18n";
 import "./shared.css";
@@ -57,13 +59,17 @@ function ValorantAContent() {
   const [faqActive, setFaqActive] = useState(0); // selected FAQ question
   const activeComp = vCurriculum.competencies[compActive];
 
-  // Lenis smooth scroll wired to ScrollTrigger (same integration as the homepage)
+  // Lenis smooth scroll wired to ScrollTrigger (desktop fine-pointer only to ensure buttery smooth mobile)
   useEffect(() => {
+    if (!window.matchMedia("(min-width: 1025px) and (pointer: fine)").matches) {
+      return;
+    }
     const lenis = new Lenis({ duration: 1.15, smoothWheel: true });
+    lenis.scrollTo(0, { immediate: true });
+    window.scrollTo(0, 0);
     lenis.on("scroll", ScrollTrigger.update);
     const onTick = (time: number) => lenis.raf(time * 1000);
     gsap.ticker.add(onTick);
-    gsap.ticker.lagSmoothing(0);
     return () => {
       gsap.ticker.remove(onTick);
       lenis.destroy();
@@ -71,6 +77,9 @@ function ValorantAContent() {
   }, []);
 
   useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
     const ctx = gsap.context(() => {
       // hero intro
       const tl = gsap.timeline({ delay: 0.15 });
@@ -85,17 +94,17 @@ function ValorantAContent() {
           { opacity: 1, y: 0, duration: 0.8, ease: "power3.out", stagger: 0.12 },
           "-=0.6"
         )
-        .to(".va-hero__agent", { opacity: 1, x: 0, duration: 1.3, ease: "power3.out" }, 0.2);
+        .to(".va-hero__bleed", { opacity: 1, x: 0, duration: 1.2, ease: "power3.out" }, 0.2);
 
       // hero parallax on scroll out
-      gsap.to(".va-hero__agent", {
-        yPercent: 12,
-        ease: "none",
-        scrollTrigger: { trigger: ".va-hero", start: "top top", end: "bottom top", scrub: true },
-      });
       gsap.to(".va-hero__copy", {
         yPercent: -14,
         opacity: 0.2,
+        ease: "none",
+        scrollTrigger: { trigger: ".va-hero", start: "top top", end: "bottom top", scrub: true },
+      });
+      gsap.to(".va-hero__bleed", {
+        yPercent: 10,
         ease: "none",
         scrollTrigger: { trigger: ".va-hero", start: "top top", end: "bottom top", scrub: true },
       });
@@ -177,8 +186,8 @@ function ValorantAContent() {
 
       {/* ── NAV ── */}
       <header className="va-nav">
-        <Link to="/" className="va-nav__brand">
-          <Logo size={26} />
+        <Link to="/" className="va-nav__brand" style={{ textDecoration: "none" }}>
+          <GosuSpeflLockup size={26} theme="pill" showLink={false} />
         </Link>
         <nav className="va-nav__links">
           <a href="#learn">{tr("Curriculum")}</a>
@@ -187,11 +196,16 @@ function ValorantAContent() {
           <a href="#price">{tr("Pricing")}</a>
         </nav>
         <div className="va-nav__end">
+          <SocialLinks variant="nav" />
           <LangToggle />
           <Magnet padding={44} strength={4}>
-            <a className="vbtn vbtn--red vbtn--sm" href="#price">
-              {tr("Enroll")}
-            </a>
+            <button
+              type="button"
+              className="vbtn vbtn--red vbtn--sm"
+              onClick={() => open("valorant")}
+            >
+              Join The Waitlist
+            </button>
           </Magnet>
         </div>
       </header>
@@ -203,12 +217,13 @@ function ValorantAContent() {
         </div>
         <div className="va-hero__glow" aria-hidden />
         <div className="va-hero__scan" aria-hidden />
-        <img
-          className="va-hero__agent"
-          src="/valorant/agents/reyna-portrait.webp"
-          alt=""
-          aria-hidden
-        />
+        <div className="va-hero__bleed" aria-hidden>
+          <img
+            className="va-hero__bleed-img"
+            src="/games/valorant.jpg"
+            alt=""
+          />
+        </div>
         <div className="va-hero__copy">
           <p className="va-hero__eyebrow">
             <span className="va-hero__ping" /> {vHero.eyebrow}
@@ -220,20 +235,24 @@ function ValorantAContent() {
           <p className="va-hero__sub">{vHero.sub}</p>
           <div className="va-hero__cta">
             <Magnet padding={70} strength={3}>
-              <a className="vbtn vbtn--red vbtn--lg" href="#price">
+              <button
+                type="button"
+                className="vbtn vbtn--red vbtn--lg"
+                onClick={() => open("valorant")}
+              >
                 {vHero.ctaPrimary}
-              </a>
+              </button>
             </Magnet>
             <Magnet padding={60} strength={4}>
-              <a className="vbtn vbtn--ghost vbtn--lg" href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
+              <Link className="vbtn vbtn--ghost vbtn--lg" to="/#titles">
                 {vHero.ctaSecondary}
-              </a>
+              </Link>
             </Magnet>
           </div>
           <div className="va-hero__lockup">
             <span className="vlockup">
-              {tr("Certified by")} <b>{vHero.lockup[0]}</b> <i>×</i> <b>{vHero.lockup[1]}</b> <i>×</i>{" "}
-              <b>{vHero.lockup[2]}</b>
+              {tr("Certified by")} <b>SPEFL-SC (Nationally Accredited)</b> <i>×</i> <b>Bharat Esports Federation</b> <i>×</i>{" "}
+              <b>Gosu Academy</b>
             </span>
           </div>
         </div>
@@ -516,8 +535,16 @@ function ValorantAContent() {
               <span className="va-price__cardglow" aria-hidden />
               <h4>{vPrice.card.title}</h4>
               <div className="va-price__amt">
-                {vPrice.card.amount}
-                <small>{vPrice.card.unit}</small>
+                <div className="va-price__badge-row">
+                  <span className="va-price__badge">{vPrice.card.discount}</span>
+                </div>
+                <div className="va-price__compare">
+                  <del className="va-price__mrp">{vPrice.card.mrp}</del>
+                  <div className="va-price__current">
+                    {vPrice.card.amount}
+                    <small>{vPrice.card.unit}</small>
+                  </div>
+                </div>
               </div>
               <div className="va-price__emi">{vPrice.card.emi}</div>
               <ul>
@@ -528,12 +555,48 @@ function ValorantAContent() {
             </div>
           </TiltCard>
         </div>
+        <div className="bg-squad val-squad" data-reveal>
+          <span className="bg-squad__tag">{vPrice.squad.tag}</span>
+          <div className="bg-squad__main">
+            <strong>{vPrice.squad.title}</strong>
+            <p>{vPrice.squad.line}</p>
+          </div>
+          <div className="bg-squad__pricing">
+            <del className="bg-squad__mrp">{vPrice.squad.mrp}</del>
+            <span className="bg-squad__amt">
+              {vPrice.squad.amount}
+              <small>{vPrice.squad.unit}</small>
+            </span>
+          </div>
+          <button
+            type="button"
+            className="vbtn vbtn--red vbtn--sm bg-squad__cta"
+            onClick={() => open("valorant-squad")}
+          >
+            {tr("Enroll roster")}
+          </button>
+        </div>
       </section>
 
       {/* ── J. PARENT MINI-BRIDGE ── */}
       <section className="va-parent">
+        <div className="va-parent__bleed" aria-hidden>
+          <img
+            className="va-parent__bleed-img"
+            src="/home/method.webp"
+            alt=""
+          />
+          <div className="va-parent__bleed-overlay" />
+          <div className="va-parent__floating-badge">
+            <span className="va-parent__floating-seal">{vParent.card.seal}</span>
+            <div className="va-parent__floating-info">
+              <strong>{vParent.card.title}</strong>
+              <small>{vParent.card.line}</small>
+            </div>
+          </div>
+        </div>
         <div className="va-parent__text" data-reveal>
-          <p className="vk vk--cobalt">
+          <p className="vk va-parent__kicker">
             <ScrambleText text={vParent.kicker} />
           </p>
           <h2 className="va-h2">{vParent.title}</h2>
@@ -549,12 +612,6 @@ function ValorantAContent() {
             </a>
           </Magnet>
         </div>
-        <SpotlightCard className="va-parent__card" spotColor="rgba(51,79,180,0.22)">
-          <div className="va-parent__seal">{vParent.card.seal}</div>
-          <h4>{vParent.card.title}</h4>
-          <p>{vParent.card.line}</p>
-          <span className="va-parent__fine">{vParent.card.fine}</span>
-        </SpotlightCard>
       </section>
 
       {/* ── K. FAQ ── */}
@@ -616,9 +673,9 @@ function ValorantAContent() {
               </button>
             </Magnet>
             <Magnet padding={70} strength={3.4}>
-              <a className="vbtn vbtn--ghost vbtn--lg" href={DISCORD_URL} target="_blank" rel="noopener noreferrer">
+              <Link className="vbtn vbtn--ghost vbtn--lg" to="/#titles">
                 {vFinal.ctaSecondary}
-              </a>
+              </Link>
             </Magnet>
           </div>
           <p className="va-final__note">{vFinal.note}</p>
@@ -626,9 +683,13 @@ function ValorantAContent() {
       </section>
 
       <footer className="vfoot">
-        <span className="vfoot__brand">
-          <Logo size={22} showWord={false} /> GOSU INDIA
-        </span>
+        <div className="vfoot__brand" style={{ display: "flex", alignItems: "center", gap: "12px" }}>
+          <GosuSpeflLockup size={22} theme="pill" />
+          <span>Gosu x SPEFL · Bharat Esports</span>
+        </div>
+        <div style={{ marginBlock: "8px" }}>
+          <SocialLinks variant="footer" />
+        </div>
         <span className="vfoot__disclaimer">{vDisclaimer}</span>
         <nav className="vfoot__legal">
           <a href="/terms">{tr("Terms")}</a>

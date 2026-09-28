@@ -6,6 +6,9 @@ const PRICE_ENV: Record<Sku, Partial<Record<Plan, string>>> = {
   valorant: { full: "PADDLE_PRICE_VALORANT_FULL", monthly: "PADDLE_PRICE_VALORANT_MONTHLY" },
   bgmi: { full: "PADDLE_PRICE_BGMI_FULL", monthly: "PADDLE_PRICE_BGMI_MONTHLY" },
   "bgmi-squad": { full: "PADDLE_PRICE_BGMI_SQUAD" },
+  "valorant-squad": { full: "PADDLE_PRICE_VALORANT_SQUAD" },
+  coaching: { full: "PADDLE_PRICE_COACHING_FULL", monthly: "PADDLE_PRICE_COACHING_MONTHLY" },
+  "tournament-ops": { full: "PADDLE_PRICE_TOURNAMENT_OPS_FULL", monthly: "PADDLE_PRICE_TOURNAMENT_OPS_MONTHLY" },
 };
 
 export function paddlePriceId(sku: Sku, plan: Plan): string {

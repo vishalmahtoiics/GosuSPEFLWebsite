@@ -12,11 +12,12 @@ export const tHero = {
   eyebrow: "Career track · Tournament operations",
   headlineTop: "Start your career as",
   headlineGold: "a tournament organizer.",
-  sub: "India hosted 275+ large esports tournaments last year, and behind every one of them is someone holding the bracket, the rulebook, and the payout together. Fifteen sessions of real event craft, a capstone tournament you actually run, and a certificate from India's government skills council.",
-  ctaPrimary: "Enroll for ₹5,000",
-  ctaSecondary: "Book a free assessment call",
-  lockup: ["Gosu Academy", "SPEFL-SC", "Bharat Esports"],
-  priceShort: "₹5,000",
+  sub: "India hosted 275+ large esports tournaments last year, and behind every one of them is someone holding the bracket, the rulebook, and the payout together. Fifteen sessions of real event craft, a capstone tournament you actually run, and a certificate from India's national skilling council (SPEFL-SC).",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  lockup: ["Gosu x SPEFL", "Bharat Esports"],
+  priceShort: "₹10,000",
+  mrpShort: "₹15,000",
 };
 
 // B. Credibility bar — five hard numbers.
@@ -184,7 +185,7 @@ export const tCert = {
   kicker: "What you walk away with",
   title: "A credential, and an event on your record.",
   body1:
-    "Clear the benchmarks and the capstone, and you earn the Gosu Academy × SPEFL-SC Certified Esports Tournament Organizer (Foundation), issued with India's government skills council for a job no Indian qualification covers yet. Graded on running a real event, not on a written test.",
+    "Clear the benchmarks and the capstone, and you earn the Gosu Academy × SPEFL-SC Certified Esports Tournament Organizer (Foundation), issued with SPEFL-SC, India's national skilling council for a job no Indian qualification covers yet. Graded on running a real event, not on a written test.",
   body2:
     "You also leave with the portfolio the market actually hires on: an event plan and budget, a format decision with its math, a full rulebook, a run of show, a sponsorship deck, payout and safeguarding checklists, and your capstone event report.",
   card: {
@@ -266,14 +267,18 @@ export const tProof = {
 // I. Pricing.
 export const tPrice = {
   kicker: "Enrol",
-  title: "₹5,000. Your first event included.",
+  title: "Step behind the scenes and run the main stage.",
+  mrp: "₹15,000",
   body:
-    "One payment, everything included. You spend the course building the artifacts agencies actually ask for, and you graduate having run a real tournament. Most people pay for that experience in failed events. Under 0.5% of Gosu students ever ask for a refund, and the assessment call is free.",
+    "Lock in inaugural cohort pricing with flexible bank-side EMI options available. One payment, everything included. You spend the course building the artifacts tournament organizers and leagues actually look for. Inaugural cohorts are opening soon—join now to lock in priority access.",
   card: {
     title: "Tournament Organizer · Foundation",
-    amount: "₹5,000",
+    mrp: "₹15,000",
+    amount: "₹10,000",
     unit: "/ course",
-    emi: "one-time · no hidden costs",
+    discount: "Save ₹5,000 (33% off)",
+    emi: "Bank-side EMI available via partner cards",
+    statusBadge: "Coming Soon",
     includes: [
       "15 live sessions · 30 hours",
       "Format math, rulebook & run-of-show builds",
@@ -283,8 +288,8 @@ export const tPrice = {
       "SPEFL-SC Certified Tournament Organizer (Foundation)",
     ],
   },
-  ctaPrimary: "Enroll now",
-  ctaSecondary: "Book the free call first",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
 };
 
 // I2. Career-ladder band under pricing.
@@ -304,13 +309,13 @@ export const tParent = {
   kicker: "Show your parents",
   title: "Event management, for a recognised sport.",
   body:
-    "Esports is officially a recognised sport in India, and the 2025 online-gaming law explicitly protects tournaments: entry fees and performance prizes are legal, betting is not. This course trains the version of that job families can already name, with operations, budgets, rules, and broadcast, and a government-recognised certificate at the end.",
-  cta: "Book a free assessment call",
+    "Esports is officially a recognised sport in India, and the 2025 online-gaming law explicitly protects tournaments: entry fees and performance prizes are legal, betting is not. This course trains the version of that job families can already name, with operations, budgets, rules, and broadcast, and a nationally accredited certificate at the end.",
+  cta: "Coming Soon",
   points: [
-    "Certified with SPEFL-SC, India's government skills council",
+    "Nationally Accredited by SPEFL-SC, India's sports & fitness skills council",
     "Compliance, tax basics, and safeguarding are graded competencies",
     "A real, documented event on the student's record by graduation",
-    "₹5,000 one-time. Hindi or English.",
+    "Flexible zero-interest EMI options with instant bank approval. Hindi & English cohorts.",
   ],
   card: {
     seal: "SPEFL",
@@ -336,7 +341,7 @@ export const tFaq = [
   },
   {
     q: "What exactly is the certificate?",
-    a: "The Gosu Academy × SPEFL-SC Certified Esports Tournament Organizer (Foundation), issued with India's government esports skills council. No national qualification for esports organizers exists anywhere yet; this program is built to align with India's first when it lands. NSQF credit-alignment is in progress.",
+    a: "The Gosu Academy × SPEFL-SC Certified Esports Tournament Organizer (Foundation), issued with India's apex esports skills council (SPEFL-SC). No national qualification for esports organizers exists anywhere yet; this program is built to align with India's first when it lands. NSQF credit-alignment is in progress.",
   },
   {
     q: "Will this get me a job?",
@@ -349,10 +354,10 @@ export const tFinal = {
   kicker: "Your name on the run of show",
   title: "Someone has to run the show. Make it you.",
   body:
-    "Enrol in the next cohort, or book the free assessment call and see if ops is your lane. India's tournament scene is growing either way. The only question is who's running it.",
-  ctaPrimary: "Enroll for ₹5,000",
-  ctaSecondary: "Book a free assessment call",
-  note: "₹5,000 one-time · Hindi & English · Online, live",
+    "Inaugural cohorts are opening soon. Join the waitlist to secure your priority enrollment, or explore our curriculum.",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  note: "₹10,000 · Bank-side EMI available · Hindi & English · Online, live",
   bg: "/tournament/final.webp",
 };
 

@@ -11,10 +11,11 @@ export const bHero = {
   headlineTop: "Become a professional",
   headlineGold: "BGMI player.",
   sub: "India has one of the deepest BGMI talent pools on earth. What it's never had is a certified path from ranked lobbies to a real roster. Fifteen sessions of tournament-grade squad play, graded against a national framework, with the federation's pipeline waiting at the top.",
-  ctaPrimary: "Enroll for ₹12,000",
-  ctaSecondary: "Join the free BGMI scrims",
-  lockup: ["Gosu Academy", "SPEFL-SC", "Bharat Esports"],
-  priceShort: "₹12,000",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  lockup: ["Gosu x SPEFL", "Bharat Esports"],
+  priceShort: "₹10,000",
+  mrpShort: "₹15,000",
 };
 
 // B. Credibility bar — five hard numbers.
@@ -169,7 +170,7 @@ export const bCert = {
   kicker: "What you walk away with",
   title: "A credential, and the game to back it.",
   body1:
-    "Clear the benchmarks and the final Tournament Assessment, and you earn the Gosu Academy × SPEFL-SC BGMI Advanced certificate, issued by India's government skills council and mapped toward the national skills framework. It's proof you trained and were assessed to a real standard, not a participation badge.",
+    "Clear the benchmarks and the final Tournament Assessment, and you earn the Gosu Academy × SPEFL-SC BGMI Advanced certificate, issued with SPEFL-SC, India's national skilling council and mapped toward the national skills framework. It's proof you trained and were assessed to a real standard, not a participation badge.",
   body2:
     "You also leave with a documented set of drop plans and rotations, a self-analysis habit built on VOD review, and a graded performance report you can show an org.",
   card: {
@@ -251,14 +252,17 @@ export const bProof = {
 // I. Pricing — individual price + a 4-player squad rate.
 export const bPrice = {
   kicker: "Enrol",
-  title: "₹12,000 for the full season.",
+  title: "Built for squads ready to dominate the lobby.",
+  mrp: "₹15,000",
   body:
-    "Or ₹2,000/month on EMI. One national price, no regional mark-ups. Bring your whole squad and the four-player rate saves you ₹8,000. Less than 0.5% of Gosu students ever ask for a refund, and there's a free weekly scrim so you can see how we coach before you commit.",
+    "Lock in inaugural cohort pricing with flexible bank-side EMI options available. Bring your whole squad to train as a unit and unlock exclusive roster savings. Less than 0.5% of Gosu students ever ask for a refund, and our inaugural cohorts are opening soon—join now to lock in priority access.",
   card: {
     title: "BGMI Advanced",
-    amount: "₹12,000",
+    mrp: "₹15,000",
+    amount: "₹10,000",
     unit: "/ season",
-    emi: "or ₹2,000/mo · EMI available",
+    discount: "Save ₹5,000 (33% off)",
+    emi: "Bank-side EMI available via partner cards",
     includes: [
       "15 live sessions · 30 hours",
       "50%+ scrims, drills & VOD review",
@@ -270,26 +274,27 @@ export const bPrice = {
   squad: {
     tag: "Squad rate",
     title: "Enrol your four",
-    amount: "₹40,000",
-    unit: "/ squad",
-    line: "Four players, one price. Save ₹8,000 versus enrolling one by one.",
+    mrp: "₹60,000",
+    amount: "₹36,000",
+    unit: "/ squad (4 players)",
+    line: "Four players, one price. Save ₹4,000 versus enrolling one by one (₹9,000/player).",
   },
-  ctaPrimary: "Enroll now",
-  ctaSecondary: "Join the free scrims first",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
 };
 
 // J. Parent mini-bridge.
 export const bParent = {
   kicker: "Show your parents",
-  title: "Fixed hours. Real coach. Govt certificate.",
+  title: "Fixed hours. Real coach. Nationally Accredited certificate.",
   body:
-    "This is a fixed-schedule programme with a coach, weekly hours, and a government-recognised certificate at the end, and BGMI skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.",
-  cta: "Book a free assessment call",
+    "This is a fixed-schedule programme with a coach, weekly hours, and a nationally accredited certificate at the end, and BGMI skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.",
+  cta: "Coming Soon",
   points: [
-    "Certified by SPEFL-SC, India's government skills council",
+    "Nationally Accredited by SPEFL-SC, India's sports & fitness skills council",
     "Fixed weekly hours and a named coach who reports on progress",
     "Career paths beyond playing: coaching, analysis, and event operations",
-    "Pay monthly on EMI. Hindi or English.",
+    "Flexible zero-interest EMI options with instant bank approval. Hindi & English cohorts.",
   ],
   card: {
     seal: "SPEFL",
@@ -311,7 +316,7 @@ export const bFaq = [
   },
   {
     q: "What exactly is the certificate?",
-    a: "The Gosu Academy × SPEFL-SC BGMI Advanced certificate, issued by India's government esports skills council, mapped toward the national skills framework. Full NSQF credit-alignment is in progress.",
+    a: "The Gosu Academy × SPEFL-SC BGMI Advanced certificate, issued with India's apex esports skills council (SPEFL-SC), mapped toward the national skills framework. Full NSQF credit-alignment is in progress.",
   },
   {
     q: "Is it live or recorded?",
@@ -328,10 +333,10 @@ export const bFinal = {
   kicker: "The road to Conqueror",
   title: "Stop grinding lobbies alone.",
   body:
-    "Enrol your squad in the next cohort, or test the waters in the free weekly BGMI scrims. Either way, see what coached actually feels like.",
-  ctaPrimary: "Enroll for ₹12,000",
-  ctaSecondary: "Join the free BGMI scrims",
-  note: "EMI available · Hindi & English · India-region servers",
+    "Inaugural cohorts are opening soon. Join the waitlist to secure priority placement, or explore our curriculum.",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  note: "Bank-side EMI available · Hindi & English · India-region servers",
   bg: "/bgmi/art/deadwood.webp",
 };
 

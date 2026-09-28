@@ -233,10 +233,26 @@ export const hi: Record<string, string> = {
     "खेलने से आगे के करियर रास्ते: कोचिंग, एनालिसिस, इवेंट ऑपरेशंस और बहुत कुछ में 28+ esports करियर",
   "Pay in monthly instalments (EMI). Hindi or English.":
     "मंथली किस्तों (EMI) में पेमेंट करें। हिंदी या अंग्रेज़ी।",
-  "Book a free assessment call": "फ्री असेसमेंट कॉल बुक करें",
+  "Nationally Accredited by SPEFL-SC, India's sports & fitness skills council":
+    "SPEFL-SC — भारत की स्पोर्ट्स और फिटनेस स्किल्स काउंसिल — द्वारा राष्ट्रीय स्तर पर मान्यता प्राप्त",
+  "Fair question. Here's the honest answer: esports in India now has an apex skilling council, national qualifiers, and an industry that hires for far more than just players. This isn't screen time. It's structured vocational education toward a nationally accredited credential.":
+    "वाजिब सवाल है। सीधा जवाब यह है: भारत में esports के पास अब एक शीर्ष स्किल्स काउंसिल, नेशनल क्वालिफ़ायर्स और एक ऐसी इंडस्ट्री है जो सिर्फ़ प्लेयर्स से कहीं ज़्यादा के लिए हायर करती है। यह स्क्रीन टाइम नहीं है। यह राष्ट्रीय स्तर पर मान्यता प्राप्त क्रेडेंशियल की तरफ़ स्ट्रक्चर्ड वोकेशनल एजुकेशन है।",
+  "Fixed weekly hours and an accredited coach who reports on progress":
+    "तय वीकली घंटे और एक मान्यता प्राप्त कोच जो प्रोग्रेस की रिपोर्ट देता है",
+  "Fixed hours. Real coach. Nationally Accredited certificate.":
+    "तय घंटे। असली कोच। राष्ट्रीय स्तर पर मान्यता प्राप्त सर्टिफिकेट।",
+  "Nationally Accredited": "राष्ट्रीय स्तर पर मान्यता प्राप्त",
+  "Pedagogy": "पेडागोगी",
+  "Accreditation": "मान्यता",
+  "Tuition & Fee": "ट्यूशन और फ़ीस",
+  "Coming Soon": "शीघ्र आ रहा है",
+  "Alliance": "गठबंधन",
+  "Course syllabus →": "कोर्स सिलेबस →",
 
   // ── Homepage: pricing section chrome + programs ───────────────────────
   "One national price. EMI on every track.": "एक नेशनल प्राइस। हर ट्रैक पर EMI।",
+  "All tracks standard MRP ₹15,000, discounted to ₹10,000. Squad packages available for competitive rosters.":
+    "सभी ट्रैक का स्टैंडर्ड MRP ₹15,000, छूट के साथ ₹10,000। प्रतिस्पर्धी टीमों के लिए स्क्वाड पैकेज उपलब्ध।",
   "The ones parents actually ask.": "वो सवाल जो पेरेंट्स असल में पूछते हैं।",
   "A certified competitive season, the road to Radiant.":
     "एक सर्टिफ़ाइड कॉम्पिटिटिव सीज़न — Radiant तक का रास्ता।",
@@ -255,6 +271,10 @@ export const hi: Record<string, string> = {
   "A portfolio piece to show": "दिखाने के लिए एक पोर्टफोलियो पीस",
   "₹15,000 · EMI": "₹15,000 · EMI",
   "Squad rate available": "स्क्वाड रेट उपलब्ध",
+  "Squad (5 players): ₹40,000": "स्क्वाड (5 खिलाड़ी): ₹40,000",
+  "Squad (4 players): ₹32,000": "स्क्वाड (4 खिलाड़ी): ₹32,000",
+  "Squad rate available (5 players)": "स्क्वाड दर उपलब्ध (5 खिलाड़ी)",
+  "Squad rate available (4 players)": "स्क्वाड दर उपलब्ध (4 खिलाड़ी)",
   "₹4,000 · one-time": "₹4,000 · एक बार",
   "₹5,000 · one-time": "₹5,000 · एक बार",
 
@@ -479,8 +499,8 @@ export const hi: Record<string, string> = {
     "रैंक्ड लैडर तेज़ी से चढ़े और EWC Academy टूर्नामेंट में तीसरा स्थान पाया, साथ ही अपने आस-पास के प्लेयर्स को भी बेहतर बनाया।",
   "Real Gosu Academy Valorant alumni. India's first cohorts start now.":
     "असली Gosu Academy Valorant एलुमनाई। भारत के पहले कोहॉर्ट अभी शुरू हो रहे हैं।",
-  "This is a fixed-schedule programme with a coach, weekly hours, and a government-recognised certificate at the end, and Valorant skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.":
-    "यह एक तय-शेड्यूल प्रोग्राम है जिसमें एक कोच, वीकली घंटे और आख़िर में एक सरकार-मान्यता प्राप्त सर्टिफिकेट है, और Valorant स्किल्स एक बड़ी esports इंडस्ट्री का हिस्सा हैं जो सिर्फ़ प्लेयर्स नहीं — कोच, एनालिस्ट और ऑर्गनाइज़र भी हायर करती है।",
+  "This is a fixed-schedule programme with a coach, weekly hours, and a nationally accredited certificate at the end, and Valorant skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.":
+    "यह एक तय-शेड्यूल प्रोग्राम है जिसमें एक कोच, वीकली घंटे और आख़िर में एक राष्ट्रीय स्तर पर मान्यता प्राप्त सर्टिफिकेट है, और Valorant स्किल्स एक बड़ी esports इंडस्ट्री का हिस्सा हैं जो सिर्फ़ प्लेयर्स नहीं — कोच, एनालिस्ट और ऑर्गनाइज़र भी हायर करती है।",
   "What rank is this for?": "यह किस रैंक के लिए है?",
   "We run separate cohorts by skill level, so you train with players around your rank instead of being dropped into a mismatch. Tell us where you're at on the free assessment and we'll place you in the right one. Newer to the game? Start in the free cup and Foundation resources first.":
     "हम स्किल लेवल के हिसाब से अलग-अलग कोहॉर्ट चलाते हैं, ताकि आप अपनी रैंक के आस-पास के प्लेयर्स के साथ ट्रेन करें, किसी मिसमैच में न फँसें। फ्री असेसमेंट पर हमें बताएँ कि आप कहाँ हैं और हम आपको सही कोहॉर्ट में रखेंगे। गेम में नए हैं? पहले फ्री कप और Foundation रिसोर्सेज़ से शुरू करें।",
@@ -672,8 +692,8 @@ export const hi: Record<string, string> = {
   "/ squad": "/ स्क्वाड",
   "Four players, one price. Save ₹8,000 versus enrolling one by one.": "चार प्लेयर, एक क़ीमत। एक-एक करके एनरोल करने के मुक़ाबले ₹8,000 बचाएँ।",
   "Join the free scrims first": "पहले फ्री स्क्रिम्स जॉइन करें",
-  "This is a fixed-schedule programme with a coach, weekly hours, and a government-recognised certificate at the end, and BGMI skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.":
-    "यह एक तय-शेड्यूल प्रोग्राम है जिसमें एक कोच, वीकली घंटे और आख़िर में एक सरकार-मान्यता प्राप्त सर्टिफिकेट है, और BGMI स्किल्स एक बड़ी esports इंडस्ट्री का हिस्सा हैं जो सिर्फ़ प्लेयर्स नहीं — कोच, एनालिस्ट और ऑर्गनाइज़र भी हायर करती है।",
+  "This is a fixed-schedule programme with a coach, weekly hours, and a nationally accredited certificate at the end, and BGMI skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.":
+    "यह एक तय-शेड्यूल प्रोग्राम है जिसमें एक कोच, वीकली घंटे और आख़िर में एक राष्ट्रीय स्तर पर मान्यता प्राप्त सर्टिफिकेट है, और BGMI स्किल्स एक बड़ी esports इंडस्ट्री का हिस्सा हैं जो सिर्फ़ प्लेयर्स नहीं — कोच, एनालिस्ट और ऑर्गनाइज़र भी हायर करती है।",
   "What tier is this for?": "यह किस टियर के लिए है?",
   "We run separate cohorts by skill level, so you train with squads around your tier instead of a mismatch. Tell us where you're at on the free assessment and we'll place you right. Newer to competitive? Start in the free scrims and Foundation resources first.":
     "हम स्किल लेवल के हिसाब से अलग-अलग कोहॉर्ट चलाते हैं, ताकि आप अपने टियर के आस-पास के स्क्वाड के साथ ट्रेन करें, किसी मिसमैच में नहीं। फ्री असेसमेंट पर बताएँ कि आप कहाँ हैं और हम आपको सही जगह रखेंगे। कॉम्पिटिटिव में नए हैं? पहले फ्री स्क्रिम्स और Foundation रिसोर्सेज़ से शुरू करें।",
@@ -706,8 +726,8 @@ export const hi: Record<string, string> = {
   "You see it, but you can't prove it": "आप देख लेते हैं, पर साबित नहीं कर पाते",
   "Your reads are right, your calls land, and none of it exists on paper. No portfolio, no credential, no reason for a team to trust you over the next loud voice in Discord.":
     "आपकी रीड्स सही होती हैं, कॉल्स सटीक होती हैं, पर काग़ज़ पर कुछ नहीं। कोई पोर्टफोलियो नहीं, कोई क्रेडेंशियल नहीं, किसी टीम के पास आप पर Discord की अगली ऊँची आवाज़ से ज़्यादा भरोसा करने की कोई वजह नहीं।",
-  "You finish with a six-piece coaching portfolio, a scored live practicum, and a government-recognised certificate. Evidence, instead of vibes.":
-    "आप एक छह-हिस्सों वाले कोचिंग पोर्टफोलियो, एक स्कोर किए गए लाइव प्रैक्टिकम और एक सरकार-मान्यता प्राप्त सर्टिफिकेट के साथ ख़त्म करते हैं। वाइब्स नहीं, सबूत।",
+  "You finish with a six-piece coaching portfolio, a scored live practicum, and a nationally accredited certificate. Evidence, instead of vibes.":
+    "आप एक छह-हिस्सों वाले कोचिंग पोर्टफोलियो, एक स्कोर किए गए लाइव प्रैक्टिकम और एक राष्ट्रीय स्तर पर मान्यता प्राप्त सर्टिफिकेट के साथ ख़त्म करते हैं। वाइब्स नहीं, सबूत।",
   "Your feedback doesn't change anything": "आपके फ़ीडबैक से कुछ नहीं बदलता",
   "You tell a player what went wrong, and next scrim they do it again. In the largest review of the evidence, over a third of feedback made performance worse, because it pointed at the player instead of the decision.":
     "आप एक प्लेयर को बताते हैं कि क्या ग़लत हुआ, और अगले स्क्रिम में वो फिर वही करता है। सबूतों की सबसे बड़ी समीक्षा में, एक-तिहाई से ज़्यादा फ़ीडबैक ने परफ़ॉर्मेंस बिगाड़ी — क्योंकि वो फ़ैसले की बजाय प्लेयर पर उँगली उठा रहा था।",
@@ -934,7 +954,13 @@ export const hi: Record<string, string> = {
   "Session 14 is a real online tournament, with a real bracket, real check-in, and real disputes, and your cohort runs it. Everyone owns a stage of the event and gets scored running it live: organizer, head admin, match admin, lobby host, moderator, observer. You leave with an event on your record and the report to prove it.":
     "सेशन 14 एक असली ऑनलाइन टूर्नामेंट है — असली ब्रैकेट, असली चेक-इन और असली डिस्प्यूट्स के साथ — और आपका कोहॉर्ट इसे चलाता है। हर कोई इवेंट का एक स्टेज संभालता है और उसे लाइव चलाते हुए स्कोर होता है: ऑर्गनाइज़र, हेड एडमिन, मैच एडमिन, लॉबी होस्ट, मॉडरेटर, ऑब्ज़र्वर। आप अपने रिकॉर्ड में एक इवेंट और उसे साबित करने वाली रिपोर्ट के साथ निकलते हैं।",
   "The operational loop, drilled until it's boring": "ऑपरेशनल लूप, इतना ड्रिल किया कि उबाऊ लगने लगे",
-  "Register": "रजिस्टर",
+  "Register": "वेटलिस्ट जॉइन करें",
+  "Join The Waitlist": "वेटलिस्ट जॉइन करें",
+  "Join The Waitlist →": "वेटलिस्ट जॉइन करें →",
+  "Explore Our Courses": "हमारे कोर्सेस देखें",
+  "Explore Curriculum": "हमारे कोर्सेस देखें",
+  "Explore Courses": "हमारे कोर्सेस देखें",
+  "Join Now": "वेटलिस्ट जॉइन करें",
   "Check-in": "चेक-इन",
   "Seed": "सीड",
   "Lobby": "लॉबी",
@@ -1011,8 +1037,8 @@ export const hi: Record<string, string> = {
   "Operations manager": "ऑपरेशंस मैनेजर",
   "Head of operations · esports director": "हेड ऑफ़ ऑपरेशंस · esports डायरेक्टर",
   "Event management, for a recognised sport.": "इवेंट मैनेजमेंट, एक मान्यता-प्राप्त खेल के लिए।",
-  "Esports is officially a recognised sport in India, and the 2025 online-gaming law explicitly protects tournaments: entry fees and performance prizes are legal, betting is not. This course trains the version of that job families can already name, with operations, budgets, rules, and broadcast, and a government-recognised certificate at the end.":
-    "भारत में esports आधिकारिक तौर पर एक मान्यता-प्राप्त खेल है, और 2025 के ऑनलाइन-गेमिंग क़ानून ने साफ़-साफ़ टूर्नामेंट्स को सुरक्षा दी है: एंट्री फ़ीस और परफ़ॉर्मेंस प्राइज़ क़ानूनी हैं, बेटिंग नहीं। यह कोर्स उस जॉब का वो रूप सिखाता है जिसे परिवार पहले से जानते हैं — ऑपरेशंस, बजट, रूल्स और ब्रॉडकास्ट के साथ, और आख़िर में एक सरकार-मान्यता प्राप्त सर्टिफिकेट।",
+  "Esports is officially a recognised sport in India, and the 2025 online-gaming law explicitly protects tournaments: entry fees and performance prizes are legal, betting is not. This course trains the version of that job families can already name, with operations, budgets, rules, and broadcast, and a nationally accredited certificate at the end.":
+    "भारत में esports आधिकारिक तौर पर एक मान्यता-प्राप्त खेल है, और 2025 के ऑनलाइन-गेमिंग क़ानून ने साफ़-साफ़ टूर्नामेंट्स को सुरक्षा दी है: एंट्री फ़ीस और परफ़ॉर्मेंस प्राइज़ क़ानूनी हैं, बेटिंग नहीं। यह कोर्स उस जॉब का वो रूप सिखाता है जिसे परिवार पहले से जानते हैं — ऑपरेशंस, बजट, रूल्स और ब्रॉडकास्ट के साथ, और आख़िर में एक राष्ट्रीय स्तर पर मान्यता प्राप्त सर्टिफिकेट।",
   "Compliance, tax basics, and safeguarding are graded competencies":
     "कॉम्प्लायंस, टैक्स की बुनियाद और सेफ़गार्डिंग ग्रेडेड कॉम्पिटेंसीज़ हैं",
   "A real, documented event on the student's record by graduation":

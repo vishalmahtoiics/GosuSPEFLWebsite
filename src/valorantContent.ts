@@ -11,10 +11,11 @@ export const vHero = {
   headlineTop: "The certified road",
   headlineGold: "to Radiant.",
   sub: "India has the raw talent to compete with the world. What it's never had is a certified path to get there. Fifteen sessions of world-standard team tactics, graded against a national framework, with the federation's pipeline waiting at the top.",
-  ctaPrimary: "Enroll for ₹15,000",
-  ctaSecondary: "Join the free Valorant cup",
-  lockup: ["Gosu Academy", "SPEFL-SC", "Bharat Esports"],
-  priceShort: "₹15,000",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  lockup: ["Gosu x SPEFL", "Bharat Esports"],
+  priceShort: "₹10,000",
+  mrpShort: "₹15,000",
 };
 
 // B. Credibility bar — five hard numbers.
@@ -171,7 +172,7 @@ export const vCert = {
   kicker: "What you walk away with",
   title: "A credential, and the game to back it.",
   body1:
-    "Clear the benchmarks and the final Showcase, and you earn the Gosu Academy × SPEFL-SC Valorant Advanced certificate, issued by India's government skills council and mapped toward the national skills framework. It's proof you trained and were assessed to a real standard, not a participation badge.",
+    "Clear the benchmarks and the final Showcase, and you earn the Gosu Academy × SPEFL-SC Valorant Advanced certificate, issued with SPEFL-SC, India's national skilling council and mapped toward the national skills framework. It's proof you trained and were assessed to a real standard, not a participation badge.",
   body2:
     "You also leave with a documented set of team executes, a self-analysis habit built on VOD review, and a graded performance report you can show an org.",
   card: {
@@ -302,14 +303,18 @@ export const vProof = {
 // I. Pricing.
 export const vPrice = {
   kicker: "Enrol",
-  title: "₹15,000 for the full season.",
+  title: "Invest in your competitive breakthrough.",
+  mrp: "₹15,000",
   body:
-    "Or ₹2,500/month on EMI. One national price, no regional mark-ups. Less than 0.5% of Gosu students ever ask for a refund, and there's a free weekly cup so you can see how we coach before you commit.",
+    "Lock in inaugural cohort pricing with flexible bank-side EMI options available. Bring your full 5-player roster on the squad rate for maximum team savings. Less than 0.5% of Gosu students ever ask for a refund, and our inaugural cohorts are opening soon—join now to lock in priority access.",
   card: {
     title: "Valorant Advanced",
-    amount: "₹15,000",
+    mrp: "₹15,000",
+    amount: "₹10,000",
     unit: "/ season",
-    emi: "or ₹2,500/mo · EMI available",
+    discount: "Save ₹5,000 (33% off)",
+    emi: "Bank-side EMI available via partner cards",
+    statusBadge: "Coming Soon",
     includes: [
       "15 live sessions · 30 hours",
       "50%+ scrims, drills & VOD review",
@@ -318,22 +323,30 @@ export const vPrice = {
       "SPEFL-SC Valorant Advanced certificate",
     ],
   },
-  ctaPrimary: "Enroll now",
-  ctaSecondary: "Join the free cup first",
+  squad: {
+    tag: "Squad rate",
+    title: "Enrol your 5-stack roster",
+    mrp: "₹75,000",
+    amount: "₹45,000",
+    unit: "/ squad (5 players)",
+    line: "Five players, one team price. Save ₹5,000 versus enrolling one by one (₹9,000/player).",
+  },
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
 };
 
 // J. Parent mini-bridge.
 export const vParent = {
   kicker: "Show your parents",
-  title: "Fixed hours. Real coach. Govt certificate.",
+  title: "Fixed hours. Real coach. Nationally Accredited certificate.",
   body:
-    "This is a fixed-schedule programme with a coach, weekly hours, and a government-recognised certificate at the end, and Valorant skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.",
-  cta: "Book a free assessment call",
+    "This is a fixed-schedule programme with a coach, weekly hours, and a nationally accredited certificate at the end, and Valorant skills sit inside a wider esports industry that hires coaches, analysts, and organisers, not only players.",
+  cta: "Coming Soon",
   points: [
-    "Certified by SPEFL-SC, India's government skills council",
+    "Nationally Accredited by SPEFL-SC, India's sports & fitness skills council",
     "Fixed weekly hours and a named coach who reports on progress",
     "Career paths beyond playing: coaching, analysis, and event operations",
-    "Pay monthly on EMI. Hindi or English.",
+    "Flexible zero-interest EMI options with instant bank approval. Hindi & English cohorts.",
   ],
   card: {
     seal: "SPEFL",
@@ -355,7 +368,7 @@ export const vFaq = [
   },
   {
     q: "What exactly is the certificate?",
-    a: "The Gosu Academy × SPEFL-SC Valorant Advanced certificate, issued by India's government esports skills council, mapped toward the national skills framework. Full NSQF credit-alignment is in progress.",
+    a: "The Gosu Academy × SPEFL-SC Valorant Advanced certificate, issued with India's apex esports skills council (SPEFL-SC), mapped toward the national skills framework. Full NSQF credit-alignment is in progress.",
   },
   {
     q: "Is it live or recorded?",
@@ -372,10 +385,10 @@ export const vFinal = {
   kicker: "The road to Radiant",
   title: "Stop grinding alone.",
   body:
-    "Enrol in the next cohort, or test the waters in the free weekly Valorant cup. Either way, see what coached actually feels like.",
-  ctaPrimary: "Enroll for ₹15,000",
-  ctaSecondary: "Join the free Valorant cup",
-  note: "EMI available · Hindi & English · India-region servers",
+    "Inaugural cohorts are opening soon. Join the waitlist to secure your priority assessment, or explore our curriculum.",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  note: "Bank-side EMI available · Hindi & English · India-region servers",
   bg: "/valorant/maps/sunset-splash.webp",
 };
 

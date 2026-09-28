@@ -14,10 +14,11 @@ export const cHero = {
   headlineTop: "Start your career as",
   headlineGold: "an esports coach.",
   sub: "Every server has one player who reads the game better than they play it. That read is a career skill. Fifteen sessions of real coaching craft: practice design, film review, and feedback that actually lands, closed out with a live coaching practicum and a certificate from India's government skills council.",
-  ctaPrimary: "Enroll for ₹4,000",
-  ctaSecondary: "Book a free assessment call",
-  lockup: ["Gosu Academy", "SPEFL-SC", "Bharat Esports"],
-  priceShort: "₹4,000",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  lockup: ["Gosu x SPEFL", "Bharat Esports"],
+  priceShort: "₹10,000",
+  mrpShort: "₹15,000",
 };
 
 // B. Credibility bar — five hard numbers.
@@ -38,7 +39,7 @@ export const cPain = {
     {
       title: "You see it, but you can't prove it",
       body: "Your reads are right, your calls land, and none of it exists on paper. No portfolio, no credential, no reason for a team to trust you over the next loud voice in Discord.",
-      fix: "You finish with a six-piece coaching portfolio, a scored live practicum, and a government-recognised certificate. Evidence, instead of vibes.",
+      fix: "You finish with a six-piece coaching portfolio, a scored live practicum, and a nationally accredited certificate. Evidence, instead of vibes.",
     },
     {
       title: "Your feedback doesn't change anything",
@@ -176,7 +177,7 @@ export const cCert = {
   kicker: "What you walk away with",
   title: "A credential, and the receipts to back it.",
   body1:
-    "Clear the benchmarks and the live practicum, and you earn the Gosu Academy × SPEFL-SC Certified Esports Coach (Foundation), issued with India's government skills council and mapped to the ICCE framework real sport coaching runs on. It's the first credential of its kind in India, and it's graded, not attended.",
+    "Clear the benchmarks and the live practicum, and you earn the Gosu Academy × SPEFL-SC Certified Esports Coach (Foundation), issued with SPEFL-SC, India's national skilling council and mapped to the ICCE framework real sport coaching runs on. It's the first credential of its kind in India, and it's graded, not attended.",
   body2:
     "You also leave with the portfolio that does the talking: a one-page coaching philosophy, a practice-block plan, a film-review write-up, a player-development plan, a welfare and safeguarding checklist, and your scored practicum report.",
   card: {
@@ -257,14 +258,18 @@ export const cProof = {
 // I. Pricing.
 export const cPrice = {
   kicker: "Enrol",
-  title: "₹4,000. The cheapest seat in the industry.",
+  title: "Turn your deep game sense into a certified career.",
+  mrp: "₹15,000",
   body:
-    "One payment, everything included. Less than a season of skins, for a government-certified credential and a portfolio you can put in front of an academy. Under 0.5% of Gosu students ever ask for a refund, and the assessment call is free, so you can find out if coaching is your lane before you spend a rupee.",
+    "Lock in inaugural cohort pricing with flexible bank-side EMI options available. One payment, everything included for a nationally accredited coaching credential and a portfolio you can put in front of an academy or team. Inaugural cohorts are opening soon—join now to lock in priority access.",
   card: {
     title: "Esports Coach · Foundation",
-    amount: "₹4,000",
+    mrp: "₹15,000",
+    amount: "₹10,000",
     unit: "/ course",
-    emi: "one-time · no hidden costs",
+    discount: "Save ₹5,000 (33% off)",
+    emi: "Bank-side EMI available via partner cards",
+    statusBadge: "Coming Soon",
     includes: [
       "15 live sessions · 30 hours",
       "Coaching reps, film review & scenario work",
@@ -274,8 +279,8 @@ export const cPrice = {
       "SPEFL-SC Certified Esports Coach (Foundation)",
     ],
   },
-  ctaPrimary: "Enroll now",
-  ctaSecondary: "Book the free call first",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
 };
 
 // I2. Career-ladder band under pricing (the honest "where it leads" rung map).
@@ -295,13 +300,13 @@ export const cParent = {
   kicker: "Show your parents",
   title: "It's a teaching job. With a certificate.",
   body:
-    "Coaching is the esports career families already understand: fixed hours, a written framework, and a credential issued with a government skills council. The industry hires coaches, analysts, and mentors. That's steady work that doesn't depend on winning the pro lottery.",
-  cta: "Book a free assessment call",
+    "Coaching is the esports career families already understand: fixed hours, a written framework, and a credential issued with an accredited skills council (SPEFL-SC). The industry hires coaches, analysts, and mentors. That's steady work that doesn't depend on winning the pro lottery.",
+  cta: "Coming Soon",
   points: [
-    "Certified with SPEFL-SC, India's government skills council",
+    "Nationally Accredited by SPEFL-SC, India's sports & fitness skills council",
     "Assessed against a written framework mapped to real sport coaching (ICCE)",
     "Player welfare and safeguarding are graded competencies, not footnotes",
-    "₹4,000 one-time. Hindi or English.",
+    "Flexible zero-interest EMI options with instant bank approval. Hindi & English cohorts.",
   ],
   card: {
     seal: "SPEFL",
@@ -323,7 +328,7 @@ export const cFaq = [
   },
   {
     q: "What exactly is the certificate?",
-    a: "The Gosu Academy × SPEFL-SC Certified Esports Coach (Foundation), issued with India's government esports skills council and mapped to the ICCE International Sport Coaching Framework. Full NSQF credit-alignment is in progress.",
+    a: "The Gosu Academy × SPEFL-SC Certified Esports Coach (Foundation), issued with India's apex esports skills council (SPEFL-SC) and mapped to the ICCE International Sport Coaching Framework. Full NSQF credit-alignment is in progress.",
   },
   {
     q: "Will this get me a job?",
@@ -340,10 +345,10 @@ export const cFinal = {
   kicker: "From player to coach",
   title: "Stop coaching for free in Discord calls.",
   body:
-    "Enrol in the next cohort, or book the free assessment call and find out if coaching is your lane. Either way, your game sense deserves more than spectator mode.",
-  ctaPrimary: "Enroll for ₹4,000",
-  ctaSecondary: "Book a free assessment call",
-  note: "₹4,000 one-time · Hindi & English · Online, live",
+    "Inaugural cohorts are opening soon. Join the waitlist to secure your priority enrollment, or explore our curriculum.",
+  ctaPrimary: "Join The Waitlist",
+  ctaSecondary: "Explore Our Courses",
+  note: "₹10,000 · Bank-side EMI available · Hindi & English · Online, live",
   bg: "/coaching/final.webp",
 };
 

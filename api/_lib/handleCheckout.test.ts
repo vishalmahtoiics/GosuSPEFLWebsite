@@ -27,7 +27,7 @@ describe("handleCheckout", () => {
     expect(json.transactionId).toBe("txn_ok");
     const order = (await repo.get(json.orderId))!;
     expect(order.status).toBe("pending");
-    expect(order.amountPaise).toBe(1200000);       // derived server-side, not from client
+    expect(order.amountPaise).toBe(1000000);       // derived server-side, not from client (₹10,000)
     expect(order.phone).toBe("+919812345670");
     expect(order.providerTransactionId).toBe("txn_ok");
   });

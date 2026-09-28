@@ -1,22 +1,30 @@
 @import "./styles/fonts.css";
 
 :root {
-  /* Gosu Academy brand tokens (from the live Shopify theme) */
-  --gold: #d9ab4d;
-  --gold-bright: #f4c63f;
-  --gold-deep: #b8862f;
-  --cobalt: #334fb4;
-  --ink: #0a0a0b;
-  --ink-2: #121212;
-  --slate: #242833;
-  --paper: #f3f3f3;
+  /* Gosu Academy — Nationally Accredited Esports Education Theme */
+  --gold: #d97706;
+  --gold-bright: #f59e0b;
+  --gold-deep: #92400e;
+  --cobalt: #1e3a8a;
+  --cyan: #0284c7;
+  --ink: #ffffff;
+  --ink-2: #f8fafc;
+  --slate: #0f172a;
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --bg-page: #f8fafc;
+  --bg-card: #ffffff;
+  --border-light: #cbd5e1;
+  --paper: #f1f5f9;
   --white: #ffffff;
 
-  --font-display: "Chakra Petch", sans-serif;
-  --font-body: "Neue Montreal", "Titillium Web", sans-serif;
-  --font-mono: "Titillium Web", "Chakra Petch", monospace;
+  --font-gosu: "Orbitron", "Chakra Petch", sans-serif;
+  --font-display: "Orbitron", "Chakra Petch", sans-serif;
+  --font-body: "Neue Montreal", "Titillium Web", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "Rajdhani", "Chakra Petch", "Titillium Web", monospace;
 
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 *,
@@ -41,11 +49,11 @@ html {
 }
 
 body {
-  background: var(--ink);
-  color: var(--white);
+  background: var(--bg-page);
+  color: var(--text-primary);
   font-family: var(--font-body);
-  font-size: 16px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.55;
   overflow-x: hidden;
 }
 
@@ -77,14 +85,15 @@ img {
   height: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0b;
+  background: #f1f5f9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #2a2a2a;
+  background: #cbd5e1;
   border-radius: 99px;
+  border: 2px solid #f1f5f9;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--gold-deep);
+  background: var(--gold);
 }
 
 .sr-only {
@@ -95,3 +104,185 @@ img {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+/* Gosu x SPEFL Lockup Pill */
+.gosu-spefl-lockup--pill {
+  padding: 6px 14px;
+  background: #090d16;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+}
+.gosu-spefl-lockup--pill:hover {
+  transform: translateY(-1px);
+  border-color: var(--gold);
+  box-shadow: 0 6px 20px rgba(180, 83, 9, 0.2);
+}
+
+/* ── Social Links & Icons (Discord & Instagram) ── */
+.social-links {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.social-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #94a3b8;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.social-icon-btn:hover {
+  transform: translateY(-1.5px);
+}
+
+.social-icon-btn--discord:hover {
+  background: rgba(88, 101, 242, 0.18);
+  border-color: #5865f2;
+  color: #7983f5;
+  box-shadow: 0 4px 14px rgba(88, 101, 242, 0.28);
+}
+
+.social-icon-btn--instagram:hover {
+  background: rgba(225, 48, 108, 0.18);
+  border-color: #e1306c;
+  color: #f77737;
+  box-shadow: 0 4px 14px rgba(225, 48, 108, 0.28);
+}
+
+.social-links--footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.social-btn--discord:hover {
+  background: #5865f2;
+  border-color: #5865f2;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(88, 101, 242, 0.35);
+  transform: translateY(-1px);
+}
+
+.social-btn--instagram:hover {
+  background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  border-color: transparent;
+  color: #ffffff;
+  box-shadow: 0 4px 16px rgba(225, 48, 108, 0.35);
+  transform: translateY(-1px);
+}
+
+.social-links--banner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.social-banner-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #f1f5f9;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-banner-card:hover {
+  transform: translateY(-2px);
+}
+
+.social-banner-card--discord:hover {
+  border-color: #5865f2;
+  box-shadow: 0 8px 24px rgba(88, 101, 242, 0.25);
+}
+
+.social-banner-card--discord .social-banner-card__icon {
+  color: #5865f2;
+}
+
+.social-banner-card--instagram:hover {
+  border-color: #e1306c;
+  box-shadow: 0 8px 24px rgba(225, 48, 108, 0.25);
+}
+
+.social-banner-card--instagram .social-banner-card__icon {
+  color: #e1306c;
+}
+
+.social-banner-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+}
+
+.social-banner-card__text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+}
+
+.social-banner-card__text strong {
+  font-size: 14px;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.social-banner-card__text span {
+  font-size: 12px;
+  color: #94a3b8;
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.social-banner-card__arrow {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 16px;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.social-banner-card:hover .social-banner-card__arrow {
+  color: #ffffff;
+  transform: translateX(3px);
+}
+

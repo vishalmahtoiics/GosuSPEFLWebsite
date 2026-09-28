@@ -1,107 +1,109 @@
 /* ═══════════════════════════════════════════════════════════════
    Tournament Ops career track — course page. Reuses the shared
    course-page design system (.vpage + va-* classes from shared.css +
-   a.css) the same way bgmi.css does. This file only:
-     1. re-themes the Valorant-red accent to broadcast blue (the
-        homepage track-card accent, #4fb4ff)
-     2. overrides the decorative red tints hard-coded in a.css
-     3. tunes the shared image slots for the AI concept art in
-        public/tournament/ (blue control-room / arena scenes)
+   a.css). This file:
+     1. re-themes the accent to Shades of Green (tokens)
+     2. overrides decorative tints to cyber / emerald green
+     3. tunes the shared image slots for tournament concept art
    Everything is scoped under `.tourney`.
    ═══════════════════════════════════════════════════════════════ */
 
-/* 1 ── accent re-theme via the shared tokens ─────────────────── */
+/* 1 ── accent re-theme via the shared tokens: Shades of Green ── */
 .vpage.tourney {
-  --red: #4fb4ff;
-  --red-deep: #2287d8;
-  --red-bright: #7cc8ff;
+  --red: #059669;
+  --red-deep: #047857;
+  --red-bright: #10b981;
+  --green-dark: #064e3b;
 }
 .tourney .vbtn--red {
-  box-shadow: 0 0 0 rgba(79, 180, 255, 0);
+  background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
+  color: #ffffff;
+  border-color: #047857;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
 }
 .tourney .vbtn--red:hover {
-  box-shadow: 0 14px 40px rgba(79, 180, 255, 0.4);
+  background: linear-gradient(135deg, #34d399 0%, #059669 50%, #064e3b 100%);
+  box-shadow: 0 14px 40px rgba(5, 150, 105, 0.45);
+  color: #ffffff;
 }
 
-/* 2 ── decorative red tints hard-coded in a.css → blue ───────── */
+/* 2 ── decorative tints → Shades of Green ─────────────────────── */
 .tourney .va-mark--big {
-  color: rgba(79, 180, 255, 0.07);
+  color: rgba(5, 150, 105, 0.04);
 }
 .tourney .va-cred {
-  background: linear-gradient(180deg, rgba(79, 180, 255, 0.05), transparent);
+  background: #ffffff;
 }
 .tourney .va-pain__row:hover {
-  background: linear-gradient(90deg, rgba(79, 180, 255, 0.05), transparent 70%);
+  background: linear-gradient(90deg, rgba(5, 150, 105, 0.05), transparent 70%);
 }
 .tourney .va-radar {
-  border-color: rgba(79, 180, 255, 0.4);
-  background: linear-gradient(100deg, rgba(79, 180, 255, 0.12), transparent 70%);
+  border-color: #a7f3d0;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.06);
 }
 .tourney .va-comp__chip:hover {
-  border-color: rgba(79, 180, 255, 0.5);
+  border-color: rgba(5, 150, 105, 0.5);
 }
 .tourney .va-comp__chip.is-active {
-  background: linear-gradient(180deg, rgba(79, 180, 255, 0.15), transparent);
+  border-color: var(--red);
+  background: #ecfdf5;
+  color: #065f46;
 }
 .tourney .va-comp__detail {
-  border-color: rgba(79, 180, 255, 0.32);
-  background: linear-gradient(100deg, rgba(79, 180, 255, 0.09), transparent 72%);
+  border-color: #a7f3d0;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.06);
 }
 .tourney .va-story:hover {
-  border-color: rgba(79, 180, 255, 0.5);
-}
-.tourney .va-story__scrim {
-  background: linear-gradient(0deg, rgba(10, 10, 11, 0.95) 4%, transparent 60%),
-    radial-gradient(80% 60% at 80% 10%, rgba(79, 180, 255, 0.2), transparent 60%);
+  border-color: rgba(5, 150, 105, 0.5);
 }
 .tourney .va-price__card {
-  border-color: rgba(79, 180, 255, 0.42);
+  border-color: #a7f3d0;
+  background: #ffffff;
 }
 .tourney .va-price__cardglow {
-  background: radial-gradient(70% 50% at 100% 0%, rgba(79, 180, 255, 0.2), transparent 60%);
+  background: radial-gradient(70% 50% at 100% 0%, rgba(5, 150, 105, 0.08), transparent 60%);
 }
 .tourney .va-faq__q:hover {
-  border-color: rgba(79, 180, 255, 0.4);
+  border-color: rgba(5, 150, 105, 0.4);
 }
 .tourney .va-faq__q.is-active {
-  border-color: rgba(79, 180, 255, 0.55);
-  background: linear-gradient(100deg, rgba(79, 180, 255, 0.1), transparent 72%);
+  border-color: var(--red);
+  background: #ecfdf5;
 }
 .tourney .va-faq__answer {
-  border-color: rgba(79, 180, 255, 0.28);
-  background: linear-gradient(
-    160deg,
-    rgba(79, 180, 255, 0.07),
-    rgba(255, 255, 255, 0.02) 42%,
-    transparent
-  );
+  border-color: #a7f3d0;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(5, 150, 105, 0.06);
 }
 .tourney .va-final__shade {
-  background: radial-gradient(circle at 50% 40%, rgba(79, 180, 255, 0.12), transparent 55%),
+  background: radial-gradient(circle at 50% 40%, rgba(16, 185, 129, 0.15), transparent 55%),
     linear-gradient(180deg, rgba(10, 10, 11, 0.55), rgba(10, 10, 11, 0.82));
 }
-/* hero blue glow, kept low so it cools the art without washing it out */
+/* hero green glow */
 .tourney .va-hero__glow {
   background: radial-gradient(
     circle at 62% 46%,
-    rgba(79, 180, 255, 0.2),
-    rgba(79, 180, 255, 0.05) 48%,
+    rgba(16, 185, 129, 0.22),
+    rgba(5, 150, 105, 0.05) 48%,
     transparent 70%
   );
 }
-/* hero ping pulse → blue (own keyframe; the a.css one is red) */
+/* hero ping pulse → Green */
 .tourney .va-hero__ping {
-  animation-name: to-ping;
+  animation-name: to-ping-green;
 }
-@keyframes to-ping {
+@keyframes to-ping-green {
   0% {
-    box-shadow: 0 0 0 0 rgba(79, 180, 255, 0.55);
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0.55);
   }
   70% {
-    box-shadow: 0 0 0 11px rgba(79, 180, 255, 0);
+    box-shadow: 0 0 0 11px rgba(5, 150, 105, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(79, 180, 255, 0);
+    box-shadow: 0 0 0 0 rgba(5, 150, 105, 0);
   }
 }
 

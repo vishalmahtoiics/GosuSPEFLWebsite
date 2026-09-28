@@ -1,111 +1,111 @@
 /* ═══════════════════════════════════════════════════════════════
    Coaching career track — course page. Reuses the shared course-page
-   design system (.vpage + va-* classes from shared.css + a.css) the
-   same way bgmi.css does. This file only:
-     1. re-themes the Valorant-red accent to a hot mentor amber
-        (deliberately hotter than the house --gold so the two stay
-        distinguishable when they sit next to each other)
-     2. overrides the decorative red tints hard-coded in a.css
-     3. tunes the shared image slots for the AI concept art in
-        public/coaching/ (wide amber-lit scenes, portrait mentor)
+   design system (.vpage + va-* classes from shared.css + a.css).
+   This file:
+     1. re-themes the accent to Shades of Blue (tokens)
+     2. overrides decorative tints to clean cyan/sapphire blue
+     3. tunes the shared image slots for coaching concept art
    Everything is scoped under `.coaching`.
    ═══════════════════════════════════════════════════════════════ */
 
-/* 1 ── accent re-theme via the shared tokens ─────────────────── */
+/* 1 ── accent re-theme via the shared tokens: Shades of Blue ─── */
 .vpage.coaching {
-  --red: #ffb238;
-  --red-deep: #d98a14;
-  --red-bright: #ffc95e;
+  --red: #0284c7;
+  --red-deep: #0369a1;
+  --red-bright: #38bdf8;
+  --blue-glow: #0ea5e9;
 }
 
-/* amber is a light accent — the primary button needs dark text */
+/* Blue primary buttons */
 .coaching .vbtn--red {
-  color: #1a1206;
-  box-shadow: 0 0 0 rgba(255, 178, 56, 0);
+  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 50%, #0369a1 100%);
+  color: #ffffff;
+  border-color: #0284c7;
+  font-weight: 700;
+  box-shadow: 0 4px 14px rgba(2, 132, 199, 0.3);
 }
 .coaching .vbtn--red:hover {
-  box-shadow: 0 14px 40px rgba(255, 178, 56, 0.4);
+  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 50%, #1e40af 100%);
+  box-shadow: 0 14px 40px rgba(2, 132, 199, 0.45);
+  color: #ffffff;
 }
 
-/* 2 ── decorative red tints hard-coded in a.css → amber ──────── */
+/* 2 ── decorative tints → Shades of Blue ──────────────────────── */
 .coaching .va-mark--big {
-  color: rgba(255, 178, 56, 0.06);
+  color: rgba(2, 132, 199, 0.04);
 }
 .coaching .va-cred {
-  background: linear-gradient(180deg, rgba(255, 178, 56, 0.05), transparent);
+  background: #ffffff;
 }
 .coaching .va-pain__row:hover {
-  background: linear-gradient(90deg, rgba(255, 178, 56, 0.05), transparent 70%);
+  background: linear-gradient(90deg, rgba(2, 132, 199, 0.05), transparent 70%);
 }
 .coaching .va-radar {
-  border-color: rgba(255, 178, 56, 0.4);
-  background: linear-gradient(100deg, rgba(255, 178, 56, 0.12), transparent 70%);
+  border-color: #bae6fd;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.06);
 }
 .coaching .va-comp__chip:hover {
-  border-color: rgba(255, 178, 56, 0.5);
+  border-color: rgba(2, 132, 199, 0.5);
 }
 .coaching .va-comp__chip.is-active {
-  background: linear-gradient(180deg, rgba(255, 178, 56, 0.15), transparent);
+  border-color: var(--red);
+  background: #f0f9ff;
+  color: #0369a1;
 }
 .coaching .va-comp__detail {
-  border-color: rgba(255, 178, 56, 0.32);
-  background: linear-gradient(100deg, rgba(255, 178, 56, 0.09), transparent 72%);
+  border-color: #bae6fd;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.06);
 }
 .coaching .va-story:hover {
-  border-color: rgba(255, 178, 56, 0.5);
-}
-.coaching .va-story__scrim {
-  background: linear-gradient(0deg, rgba(10, 10, 11, 0.95) 4%, transparent 60%),
-    radial-gradient(80% 60% at 80% 10%, rgba(255, 178, 56, 0.2), transparent 60%);
+  border-color: rgba(2, 132, 199, 0.5);
 }
 .coaching .va-price__card {
-  border-color: rgba(255, 178, 56, 0.42);
+  border-color: #bae6fd;
+  background: #ffffff;
 }
 .coaching .va-price__cardglow {
-  background: radial-gradient(70% 50% at 100% 0%, rgba(255, 178, 56, 0.2), transparent 60%);
+  background: radial-gradient(70% 50% at 100% 0%, rgba(2, 132, 199, 0.08), transparent 60%);
 }
 .coaching .va-faq__q:hover {
-  border-color: rgba(255, 178, 56, 0.4);
+  border-color: rgba(2, 132, 199, 0.4);
 }
 .coaching .va-faq__q.is-active {
-  border-color: rgba(255, 178, 56, 0.55);
-  background: linear-gradient(100deg, rgba(255, 178, 56, 0.1), transparent 72%);
+  border-color: var(--red);
+  background: #f0f9ff;
 }
 .coaching .va-faq__answer {
-  border-color: rgba(255, 178, 56, 0.28);
-  background: linear-gradient(
-    160deg,
-    rgba(255, 178, 56, 0.07),
-    rgba(255, 255, 255, 0.02) 42%,
-    transparent
-  );
+  border-color: #bae6fd;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(2, 132, 199, 0.06);
 }
 .coaching .va-final__shade {
-  background: radial-gradient(circle at 50% 40%, rgba(255, 178, 56, 0.12), transparent 55%),
+  background: radial-gradient(circle at 50% 40%, rgba(14, 165, 233, 0.15), transparent 55%),
     linear-gradient(180deg, rgba(10, 10, 11, 0.55), rgba(10, 10, 11, 0.82));
 }
-/* hero amber glow, kept low so it warms the art without washing it out */
+/* hero blue glow */
 .coaching .va-hero__glow {
   background: radial-gradient(
     circle at 62% 46%,
-    rgba(255, 178, 56, 0.2),
-    rgba(255, 178, 56, 0.05) 48%,
+    rgba(14, 165, 233, 0.22),
+    rgba(2, 132, 199, 0.05) 48%,
     transparent 70%
   );
 }
-/* hero ping pulse → amber (own keyframe; the a.css one is red) */
+/* hero ping pulse → Blue */
 .coaching .va-hero__ping {
-  animation-name: co-ping;
+  animation-name: co-ping-blue;
 }
-@keyframes co-ping {
+@keyframes co-ping-blue {
   0% {
-    box-shadow: 0 0 0 0 rgba(255, 178, 56, 0.55);
+    box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.55);
   }
   70% {
-    box-shadow: 0 0 0 11px rgba(255, 178, 56, 0);
+    box-shadow: 0 0 0 11px rgba(2, 132, 199, 0);
   }
   100% {
-    box-shadow: 0 0 0 0 rgba(255, 178, 56, 0);
+    box-shadow: 0 0 0 0 rgba(2, 132, 199, 0);
   }
 }
 

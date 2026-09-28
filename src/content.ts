@@ -2,57 +2,84 @@
 
 export const brand = {
   name: "Gosu Academy",
-  partner: "Bharat Esports",
+  partner: "Bharat Esports Federation",
   council: "SPEFL-SC",
   region: "India",
   domain: "gosuacademy.in",
 };
 
 export const hero = {
+  authorityRibbon: "Nationally Accredited Esports Education · SPEFL-SC · Bharat Esports Federation",
   eyebrow: "India's first government-certified esports academy",
   // Headline rendered word-by-word; the last word gets the gold accent.
   headline: ["Make", "esports", "your", "career"],
   headlinePlain: "Make esports your career.",
   sub: "World-class esports training, now certified by SPEFL-SC, India's government skills council. We turn esports passion and skill into recognised, paid professionals, and put India on the map of world esports.",
-  ctaPrimary: "Find your path",
-  ctaSecondary: "Book a free assessment",
+  ctaPrimary: "Explore Our Courses",
+  ctaSecondary: "Join The Waitlist",
+  badges: [
+    { title: "Nationally Accredited", subtitle: "SPEFL-SC Awarding Body" },
+    { title: "Bharat Esports Federation", subtitle: "24 State Chapters" },
+    { title: "Asian Games & Olympics", subtitle: "National Talent Pipeline" },
+    { title: "NEP 2020 Higher Ed", subtitle: "DigiLocker ABC Credits" },
+  ],
 };
 
 // Animated count-up strip. Values must stay numeric for the CountUp / data-to targets.
 export const stats = [
   { value: 28000, suffix: "+", label: "Gamers trained worldwide" },
-  { value: 12, suffix: "+", label: "Countries" },
-  { value: 28, suffix: "+", label: "Esports careers trained" },
-  { value: 95, suffix: "%", label: "Hit their target rank" },
+  { value: 24, suffix: "", label: "Recognized State Associations" },
+  { value: 85, suffix: "+", label: "SPEFL-SC Training Partners" },
+  { value: 95, suffix: "%", label: "Hit their target tier" },
 ];
 
 export const partnership = {
-  kicker: "Why this is different",
-  title: "The only academy backed by all three.",
-  body: "Anyone can post coaching clips. Nobody else can put a global academy, a government skills council, and the national esports federation on the same certificate.",
+  kicker: "National Sovereign Alliance",
+  title: "Government Accreditation Meets World-Class Coaching.",
+  body: "Turning grassroots passion into professional careers. A direct alliance uniting international champion coaches, national government skilling standards, and India's official democratic governing federation.",
   pillars: [
     {
-      tag: "01",
-      title: "Gosu Academy",
-      logo: "/logos/gosu.png",
-      mark: "",
-      body: "The world-class coaching. 28,000+ players trained across 12+ countries, the same coaches behind ranked players and pro rosters worldwide, now teaching in India.",
-    },
-    {
-      tag: "02",
+      tag: "01 · SKILLING & ACCREDITATION",
       title: "SPEFL-SC",
-      logo: "/logos/spefl.png",
+      logo: "/logos/SPEFL_White.png",
       mark: "",
-      body: "The government credential. India's sports & esports skills council. Your training maps to a recognised national skills standard, not just a course-completion badge.",
+      body: "Government Accreditation Body. Founded under NSDC, SPEFL-SC deploys National Occupational Standards (NOS) and official NSQF qualifications for esports education across India.",
     },
     {
-      // Bharat Esports has no clean logo asset online, so we pair the emblem
-      // (extracted from a screenshot) with a live-text wordmark in the site font.
-      tag: "03",
-      title: "Bharat Esports",
+      tag: "02 · NATIONAL GOVERNANCE",
+      title: "Bharat Esports Federation",
       logo: "",
       mark: "/logos/bharat-mark.png",
-      body: "The pathway. A direct line to national qualifiers, selection camps, and the circuits where careers actually start.",
+      body: "Official National Federation. India's premier democratic esports body with 24 state chapters, creating official pathways to the Asian Games 2026 and Olympic Esports Games.",
+    },
+    {
+      tag: "03 · VOCATIONAL IMPLEMENTATION",
+      title: "Gosu Academy",
+      logo: "/logos/GOSU_Wordmark_White.png",
+      mark: "",
+      body: "World-Class Pro Coaching. Exclusive training partner delivering tournament-proven curriculum, pro faculty, and the coaching systems that have built 28,000+ winners across 12 countries.",
+    },
+  ],
+  foundationPillars: [
+    {
+      num: "01",
+      title: "Sovereign Governance",
+      desc: "Anchored by SPEFL-SC; democratic federation of 24 registered state associations; official gateway to Asian Games 2026 & IOC Olympic Esports Games.",
+    },
+    {
+      num: "02",
+      title: "Vocational Skilling",
+      desc: "Tripartite Gosu × SPEFL-SC venture; NSQF qualification packs professionalizing Coaches, Referees, Analysts, and Broadcast Engineers with accredited diplomas.",
+    },
+    {
+      num: "03",
+      title: "Athlete Welfare & Integrity",
+      desc: "100% subsidized air travel & luxury stays for national finalists; WADA/NADA anti-doping testing; mental health & biomechanical sports psychology counseling.",
+    },
+    {
+      num: "04",
+      title: "Collegiate & School Outreach",
+      desc: "Leveraging SPEFL-SC's nationwide ecosystem of affiliated academic institutions, schools, and 85+ training partners; NEP 2020 vocational credit integration and grassroots scouting combines.",
     },
   ],
 };
@@ -92,7 +119,7 @@ export const titles = [
     focus: "center 30%",
     bright: 1,
     blurb: "Turn game sense into a certified coaching career: VOD review, session design, and the system Gosu coaches use every day.",
-    altCta: "Book assessment",
+    altCta: "Coming Soon",
     href: "/coaching",
   },
   {
@@ -104,60 +131,70 @@ export const titles = [
     focus: "center 30%",
     bright: 1,
     blurb: "Run the brackets, broadcasts, and live events that fill arenas. Graduate with a real event in your portfolio.",
-    altCta: "Book assessment",
+    altCta: "Coming Soon",
     href: "/tournament-ops",
   },
 ];
 
-export const trackViewCta = "View the course";
+export const trackViewCta = "Explore Course";
 
 // Pricing and program details shown in the homepage paths section.
 export const programs = [
   {
     code: "TRACK 01",
     name: "Valorant",
-    price: "₹15,000 · EMI",
+    mrp: "₹15,000",
+    price: "₹10,000",
+    squadRate: "Squad (5 players): ₹45,000",
     forWho: "A certified competitive season, the road to Radiant.",
     points: [
       "15 live sessions · 30 hours",
       "Graded Competitive Showcase",
       "SPEFL-SC certificate",
+      "Squad rate available (5 players)",
     ],
     href: "/valorant",
   },
   {
     code: "TRACK 02",
     name: "BGMI",
-    price: "Squad rate available",
+    mrp: "₹15,000",
+    price: "₹10,000",
+    squadRate: "Squad (4 players): ₹36,000",
     forWho: "India's most-played title, coached to a national standard.",
     points: [
       "15 sessions · 30 hours",
       "Tournament-style assessment",
       "SPEFL-SC certificate",
+      "Squad rate available (4 players)",
     ],
     href: "/bgmi",
   },
   {
     code: "TRACK 03",
     name: "Coaching",
-    price: "₹4,000 · one-time",
+    mrp: "₹15,000",
+    price: "₹10,000",
     forWho: "Turn game sense into a certified coaching career.",
     points: [
       "15 live sessions · 30 hours",
       "Live coaching practicum, scored",
       "SPEFL-SC certificate",
+      "Portfolio & NSQF alignment",
     ],
     href: "/coaching",
   },
   {
     code: "TRACK 04",
     name: "Tournament Ops",
-    price: "₹5,000 · one-time",
+    mrp: "₹15,000",
+    price: "₹10,000",
     forWho: "Run the events that fill arenas.",
     points: [
       "Run a real event during the course",
       "A portfolio piece to show",
       "SPEFL-SC certificate",
+      "LAN ops & rulebook adjudication",
     ],
     href: "/tournament-ops",
   },
@@ -165,45 +202,43 @@ export const programs = [
 
 export const method = {
   kicker: "The Gosu Method",
-  title: "A national standard, taught the right way.",
-  lead: "Every track runs the same four steps, whether you're training to compete or to build a career around the game. The coaching and the benchmark don't change.",
+  title: "Pro Training That Actually Works.",
+  lead: "No guessing. Every session follows a proven four-step system used by top tier teams worldwide.",
   steps: [
     {
       n: "01",
       title: "Diagnose",
-      body: "We measure where you stand against a real benchmark and pinpoint exactly what to work on first.",
+      body: "We benchmark your current skill level, aim, and game sense to find your real weaknesses.",
     },
     {
       n: "02",
       title: "Train",
-      body: "A weekly plan of theory and hands-on practice, every session measured against the standard instead of guesswork.",
+      body: "A structured weekly curriculum of live scrims, mechanics drills, and tactical executes.",
     },
     {
       n: "03",
       title: "Review",
-      body: "Your coach breaks down your real work week by week, so each session fixes what the last one exposed.",
+      body: "Pro coaches review your actual match VODs, correcting mistakes and building winning habits.",
     },
     {
       n: "04",
       title: "Certify",
-      body: "Clear the benchmarks and earn an SPEFL-SC credential, proof you trained to a national standard.",
+      body: "Clear the national assessment to earn your official government-recognized certificate.",
     },
   ],
-  // One-line rigor proof, folded in under the four steps (the full credential
-  // ladder and seven-competency grid now live on the course pages).
   proof:
-    "Every track is graded against a written framework and a final Showcase, not attendance.",
+    "Every track is assessed against official national competency standards, not just attendance.",
   visual: {
     src: "/home/method.webp",
-    tag: "The training floor",
-    caption: "Every session is measured against the standard.",
+    tag: "The Training Floor",
+    caption: "Every session is measured against official competitive standards.",
   },
 };
 
 // Full-bleed image band that breaks up the text-heavy middle of the page.
 export const showcaseBand = {
-  eyebrow: "The whole point",
-  line: "A national standard is what turns practice into proof a team or an employer can trust.",
+  eyebrow: "Why Certification Matters",
+  line: "A national certification turns your daily grind into official proof that teams, colleges, and employers respect.",
   src: "/home/band.webp",
 };
 
@@ -283,44 +318,66 @@ export const testimonials = [
 ];
 
 export const certification = {
-  kicker: "Certification",
-  title: "A credential, not a receipt",
-  body: "Finish a track and earn a co-branded Gosu Academy × SPEFL-SC certificate, mapped toward India's national skills framework. It's structured training toward a credential the country recognises, not screen time.",
-  badges: ["SPEFL-SC certified", "NSQF alignment in progress", "Bharat Esports backed"],
+  kicker: "Official Certification",
+  title: "A Real Credential, Not Just Screen Time",
+  body: "Complete your training and earn an official co-branded Gosu Academy × SPEFL-SC certificate mapped to India's national skills framework. Concrete proof of skill for pro rosters, universities, and esports employers.",
+  badges: ["SPEFL-SC Certified", "NSQF Framework", "Bharat Esports Backed"],
   // Specimen document rendered by <Certificate/>. The homepage shows the
   // flagship Valorant credential; course pages carry their own variant.
   doc: {
     id: "GSA-VAL-26-0001",
     level: "Skill Level 2",
     title: "Valorant Advanced",
-    body: "has completed the 15-session, 30-hour Valorant Advanced season and passed the graded Competitive Showcase, assessed against the SPEFL-SC seven-competency framework.",
+    body: "has completed the 15-session, 30-hour Valorant Advanced season and passed the graded Competitive Showcase, assessed against the official SPEFL-SC competency framework.",
   },
 };
 
 export const finalCta = {
-  kicker: "Tryouts are open",
-  title: "Start where you are. Leave with a credential.",
-  body: "Book a free 20-minute assessment, or jump into the free weekly cup and see how we coach before you pay a rupee.",
-  cta: "Book a free assessment",
-  note: "No card required · Hindi & English · India-region servers",
+  kicker: "Admissions Open",
+  title: "Start Your Esports Career Today.",
+  body: "Inaugural batches are filling fast. Join the waitlist for free to secure your trial spot and get full curriculum access.",
+  cta: "Join The Waitlist",
+  note: "Bank EMI available · Government accredited · Hindi & English batches",
 };
 
 // Additional homepage sections.
 
 export const twoDoors = {
-  kicker: "Two doors, one career",
-  title: "There's more than one way to go pro.",
-  body: "Some people make their career as players. Others build the ecosystem: coaching teams, running events, and calling the shots. We certify both players and career professionals.",
+  kicker: "Choose Your Path",
+  title: "Play on Stage or Run the Industry.",
+  body: "Master tactical gameplay as a signed pro player, or build an enduring career behind the scenes in coaching, analytics, and tournament operations.",
   doors: [
     {
       tag: "Compete",
-      title: "Go pro as a player",
-      body: "Valorant and BGMI, coached to a competitive standard and graded on the record.",
+      title: "Go Pro as a Player",
+      body: "Master tactical gameplay, agent mechanics, and squad synergy coached by international champions, leading to official federation trials.",
+      badge: "01 // ATHLETE PATH",
+      groupLabel: "POPULAR ESPORTS DISCIPLINES",
+      items: [
+        { name: "Valorant", tag: "Tactical FPS" },
+        { name: "BGMI", tag: "Battle Royale" },
+        { name: "Counter-Strike 2", tag: "Precision FPS" },
+        { name: "Free Fire Max", tag: "Mobile BR" },
+        { name: "Dota 2", tag: "Strategy MOBA" },
+        { name: "Tekken 8", tag: "FGC Fighter" },
+      ],
+      note: "Structured pathways for high-tier ranked athletes targeting national teams and professional contracts.",
     },
     {
       tag: "Build",
-      title: "Work in the industry",
-      body: "Coaching and tournament operations, the certified careers behind the players.",
+      title: "Work in the Industry",
+      body: "Accredited diplomas and practical credentials for the high-demand professional careers running live esports leagues and organizations.",
+      badge: "02 // INDUSTRY PATH",
+      groupLabel: "ESPORTS INDUSTRY CAREER ROLES",
+      items: [
+        { name: "Head Coach", tag: "Tactical Strategy" },
+        { name: "Tournament Director", tag: "League Operations" },
+        { name: "Broadcast Producer", tag: "Live Production" },
+        { name: "Esports Team Manager", tag: "Roster Management" },
+        { name: "Match Referee", tag: "Rules & Staging" },
+        { name: "VOD / Data Analyst", tag: "Performance Analytics" },
+      ],
+      note: "SPEFL-SC accredited credentials recognized by tournament organizers, colleges, and national federations.",
     },
   ],
 };
@@ -330,8 +387,8 @@ export const twoDoors = {
 // they belong on the individual course pages where the levels and competencies
 // attach to real modules, hours, and outcomes.
 export const ladder = {
-  kicker: "The credential ladder",
-  title: "Three levels. One national standard.",
+  kicker: "The Credential Ladder",
+  title: "Three Levels. One National Standard.",
   rungs: [
     { lv: "Level 1", title: "Foundation", body: "Core systems and your first certified benchmark." },
     { lv: "Level 2", title: "Advanced", body: "Team play, tactical depth, and a graded showcase." },
@@ -340,9 +397,9 @@ export const ladder = {
 };
 
 export const competencies = {
-  kicker: "The rigor",
-  title: "Graded on seven competencies, not attendance.",
-  lead: "Every track is measured against a written framework and a final Showcase, so \"certified\" means something an employer or a team can actually trust.",
+  kicker: "Official Standards",
+  title: "Graded on Seven Real Competencies.",
+  lead: "Every track is measured against a written framework and a final Showcase, so \"certified\" means something an employer or team can truly trust.",
   items: [
     { c: "C1", label: "Core knowledge & fundamentals" },
     { c: "C2", label: "Communication & teamwork" },
@@ -356,8 +413,8 @@ export const competencies = {
 };
 
 export const successStories = {
-  kicker: "They started where you are",
-  title: "Turn your passion into a real career like them.",
+  kicker: "Real Student Results",
+  title: "Turn Your Passion Into a Real Career.",
   hint: "Drag to explore",
   // Real Gosu Academy alumni, drawn from our programs worldwide. Game-specific
   // wins (Valorant) live on the Valorant page; here they're framed by discipline
@@ -423,23 +480,23 @@ export const successStories = {
 };
 
 export const coachesIntro = {
-  kicker: "World-class, taught local",
-  title: "The best esports instructors.",
-  lead: "We combine the greatest esports talent, globally and locally, to set a new standard for esports training in India.",
+  kicker: "Top-Tier Mentors",
+  title: "Learn from World-Class Champions.",
+  lead: "International champions and pro coaches who have led teams at the Esports World Cup, VCT, and global majors.",
   note: "Our international coaching bench, teaching in India. Indian head coaches join the roster as each cohort opens.",
 };
 
 export const parentBridge = {
-  kicker: "For parents",
-  title: "Is this a real future?",
-  body: "Fair question. Here's the honest answer: esports in India now has a government skills council, national qualifiers, and an industry that hires for far more than just players. This isn't screen time. It's structured training toward a credential the country recognises.",
+  kicker: "For Parents & Families",
+  title: "Is Esports a Real Career in India?",
+  body: "Yes. Esports in India is now an officially recognized sporting and skilling sector. The industry is hiring certified coaches, analysts, referees, and tournament managers across the country.",
   points: [
-    "Certified by SPEFL-SC, India's government skills council",
-    "Fixed weekly hours and a coach who reports on progress",
-    "Career paths beyond playing: 28+ esports careers in coaching, analysis, event operations, and more",
-    "Pay in monthly instalments (EMI). Hindi or English.",
+    "Government-recognized by SPEFL-SC, India's sports & fitness skills council",
+    "Fixed weekly hours and certified coaches who report on student progress",
+    "28+ real career paths in coaching, broadcasting, event production, and analytics",
+    "Scholarships & bank EMI available. Taught in Hindi and English.",
   ],
-  cta: "Book a free assessment call",
+  cta: "Join The Waitlist",
 };
 
 export const faq = [
@@ -449,7 +506,7 @@ export const faq = [
   },
   {
     q: "What is the certificate actually worth?",
-    a: "It's issued by SPEFL-SC, India's government sports & esports skills council, and maps toward the national skills framework. It's proof you trained and were assessed to a recognised standard. Full NSQF credit-alignment is in progress.",
+    a: "It's issued by SPEFL-SC, India's apex sports & esports skills council, and maps toward the national skills framework. It's proof you trained and were assessed to a nationally accredited standard. Full NSQF credit-alignment is in progress.",
   },
   {
     q: "Is it safe and structured?",
@@ -461,6 +518,6 @@ export const faq = [
   },
   {
     q: "Can we pay monthly?",
-    a: "Yes. EMI is available on every track, and there's a free weekly cup and free resources before you commit.",
+    a: "Yes. Flexible EMI options are strictly bank-side via eligible credit and debit card partner banks. Our inaugural cohorts are opening soon—join now to lock in priority placement.",
   },
 ];

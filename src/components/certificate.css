@@ -1,7 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════
    Specimen certificate (Certificate.tsx) — the co-branded document
-   shown in the "credential" sections. The outer .certx is only a
-   size container; everything inside .certx__doc is sized in cqw so
+   shown in the "credential" sections. Sized in cqw so
    the certificate scales as one piece wherever it's placed.
    ═══════════════════════════════════════════════════════════════ */
 
@@ -14,26 +13,26 @@
   position: relative;
   aspect-ratio: 1.414; /* A4 landscape */
   border-radius: 12px;
-  border: 1px solid rgba(217, 171, 77, 0.45);
+  border: 1.5px solid rgba(180, 83, 9, 0.45);
   background:
-    radial-gradient(120% 90% at 50% -12%, rgba(217, 171, 77, 0.15), transparent 55%),
-    radial-gradient(90% 70% at 50% 118%, rgba(217, 171, 77, 0.07), transparent 60%),
-    linear-gradient(150deg, #17130b, #0b0b0c 58%);
-  box-shadow: 0 42px 90px rgba(0, 0, 0, 0.5);
+    radial-gradient(120% 90% at 50% -12%, rgba(217, 171, 77, 0.16), transparent 55%),
+    radial-gradient(90% 70% at 50% 118%, rgba(217, 171, 77, 0.08), transparent 60%),
+    linear-gradient(150deg, #fdfbf7, #f7f3eb 58%);
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.1), 0 4px 14px rgba(15, 23, 42, 0.05);
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: 3.4cqw 5.4cqw 3.2cqw;
-  color: #fff;
+  color: #0f172a;
 }
 
 /* inner hairline frame + corner ticks */
 .certx__frame {
   position: absolute;
   inset: 2cqw;
-  border: 1px solid rgba(217, 171, 77, 0.24);
+  border: 1px solid rgba(180, 83, 9, 0.28);
   border-radius: 6px;
   pointer-events: none;
 }
@@ -42,16 +41,16 @@
   position: absolute;
   inset: -0.4cqw;
   background:
-    linear-gradient(#d9ab4d, #d9ab4d) left top / 2.6cqw 1px,
-    linear-gradient(#d9ab4d, #d9ab4d) left top / 1px 2.6cqw,
-    linear-gradient(#d9ab4d, #d9ab4d) right top / 2.6cqw 1px,
-    linear-gradient(#d9ab4d, #d9ab4d) right top / 1px 2.6cqw,
-    linear-gradient(#d9ab4d, #d9ab4d) left bottom / 2.6cqw 1px,
-    linear-gradient(#d9ab4d, #d9ab4d) left bottom / 1px 2.6cqw,
-    linear-gradient(#d9ab4d, #d9ab4d) right bottom / 2.6cqw 1px,
-    linear-gradient(#d9ab4d, #d9ab4d) right bottom / 1px 2.6cqw;
+    linear-gradient(#b45309, #b45309) left top / 2.6cqw 1px,
+    linear-gradient(#b45309, #b45309) left top / 1px 2.6cqw,
+    linear-gradient(#b45309, #b45309) right top / 2.6cqw 1px,
+    linear-gradient(#b45309, #b45309) right top / 1px 2.6cqw,
+    linear-gradient(#b45309, #b45309) left bottom / 2.6cqw 1px,
+    linear-gradient(#b45309, #b45309) left bottom / 1px 2.6cqw,
+    linear-gradient(#b45309, #b45309) right bottom / 2.6cqw 1px,
+    linear-gradient(#b45309, #b45309) right bottom / 1px 2.6cqw;
   background-repeat: no-repeat;
-  opacity: 0.75;
+  opacity: 0.85;
 }
 
 /* engraved rings radiating from the seal */
@@ -61,7 +60,7 @@
   pointer-events: none;
   background: repeating-radial-gradient(
     circle at 50% 16%,
-    rgba(217, 171, 77, 0.045) 0 1px,
+    rgba(180, 83, 9, 0.04) 0 1px,
     transparent 1px 6px
   );
   -webkit-mask-image: radial-gradient(60% 42% at 50% 16%, #000, transparent 72%);
@@ -76,7 +75,7 @@
   width: 42cqw;
   height: 42cqw;
   transform: translate(-50%, -50%);
-  color: rgba(217, 171, 77, 0.055);
+  color: rgba(180, 83, 9, 0.05);
   pointer-events: none;
 }
 
@@ -92,10 +91,12 @@
   text-transform: uppercase;
 }
 .certx__meta span:first-child {
-  color: rgba(217, 171, 77, 0.85);
+  color: #b45309;
+  font-weight: 600;
 }
 .certx__meta span:last-child {
-  color: rgba(255, 255, 255, 0.5);
+  color: #64748b;
+  font-weight: 600;
 }
 
 /* seal */
@@ -105,10 +106,10 @@
   height: 9.4cqw;
   margin-top: 0.8cqw;
   border-radius: 50%;
-  border: 1px solid rgba(217, 171, 77, 0.55);
+  border: 1.5px solid rgba(180, 83, 9, 0.6);
   box-shadow:
-    0 0 0 0.55cqw rgba(217, 171, 77, 0.09),
-    inset 0 0 2.2cqw rgba(217, 171, 77, 0.14);
+    0 0 0 0.55cqw rgba(217, 171, 77, 0.14),
+    inset 0 0 2.2cqw rgba(217, 171, 77, 0.18);
   display: grid;
   place-items: center;
 }
@@ -124,9 +125,10 @@
   font-family: var(--font-mono);
   font-size: 1.8cqw;
   letter-spacing: 0.42em;
-  text-indent: 0.42em; /* recentre the letterspaced line */
+  text-indent: 0.42em;
   text-transform: uppercase;
-  color: rgba(217, 171, 77, 0.9);
+  color: #b45309;
+  font-weight: 700;
 }
 .certx__title {
   position: relative;
@@ -139,6 +141,7 @@
   letter-spacing: 0.015em;
   text-transform: uppercase;
   text-wrap: balance;
+  color: #0f172a;
 }
 
 /* recipient */
@@ -148,17 +151,17 @@
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-size: 2cqw;
-  color: rgba(255, 255, 255, 0.55);
+  color: #475569;
 }
 .certx__name {
   position: relative;
   margin-top: 0.5cqw;
   padding: 0 4.5cqw 0.9cqw;
-  border-bottom: 1px solid rgba(217, 171, 77, 0.4);
+  border-bottom: 1.5px solid rgba(180, 83, 9, 0.45);
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
   font-size: 4.4cqw;
-  color: #f5ead0;
+  color: #0f172a;
 }
 .certx__body {
   position: relative;
@@ -166,7 +169,7 @@
   max-width: 76cqw;
   font-size: 1.95cqw;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.64);
+  color: #334155;
 }
 
 /* signatures + partner logos */
@@ -184,7 +187,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: rgba(238, 224, 192, 0.8);
+  color: #1e3a8a;
 }
 .certx__sig svg {
   width: 15cqw;
@@ -195,7 +198,7 @@
   width: 100%;
   max-width: 19cqw;
   height: 1px;
-  background: rgba(255, 255, 255, 0.24);
+  background: rgba(15, 23, 42, 0.25);
   margin-bottom: 0.7cqw;
 }
 .certx__sigrole {
@@ -203,47 +206,54 @@
   font-size: 1.5cqw;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+  color: #0f172a;
+  font-weight: 600;
 }
 .certx__sigorg {
   font-family: var(--font-mono);
   font-size: 1.4cqw;
   letter-spacing: 0.13em;
   text-transform: uppercase;
-  color: rgba(217, 171, 77, 0.75);
+  color: #b45309;
+  font-weight: 600;
 }
 .certx__brands {
   display: flex;
   align-items: center;
-  gap: 2.4cqw;
-  padding-bottom: 0.4cqw;
+  gap: 2cqw;
+  padding: 0.9cqw 2.2cqw;
+  background: #000000;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35), 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .certx__brands img {
-  height: 4.1cqw;
+  height: 3.8cqw;
   width: auto;
   display: block;
 }
 .certx__brands img.certx__spefl {
-  height: 6.2cqw;
+  height: 5.6cqw;
 }
 .certx__brandsep {
   width: 1px;
-  height: 4.6cqw;
-  background: rgba(255, 255, 255, 0.16);
+  height: 4.2cqw;
+  background: rgba(255, 255, 255, 0.25);
 }
 .certx__bharat {
   display: flex;
   align-items: center;
-  gap: 0.9cqw;
+  gap: 0.8cqw;
   font-family: var(--font-mono);
-  font-size: 1.5cqw;
+  font-size: 1.45cqw;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  font-weight: 700;
   white-space: nowrap;
 }
 .certx__bharat img {
-  height: 4.4cqw;
+  height: 3.8cqw;
 }
 
 /* fine print */
@@ -254,5 +264,5 @@
   font-size: 1.35cqw;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.38);
+  color: #64748b;
 }

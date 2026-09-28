@@ -9,7 +9,7 @@ export function normalizeIndianPhone(raw: string): string | null {
 
 export const checkoutRequestSchema = z
   .object({
-    sku: z.enum(["valorant", "bgmi", "bgmi-squad"]),
+    sku: z.enum(["valorant", "valorant-squad", "bgmi", "bgmi-squad", "coaching", "tournament-ops"]),
     plan: z.enum(["full", "monthly"]),
     name: z.string().trim().min(2).max(120),
     email: z.string().trim().email().max(254),

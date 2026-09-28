@@ -1,11 +1,14 @@
 import { StrictMode, Suspense, lazy, type ReactNode } from "react";
 import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Navigate, Outlet } from "react-router-dom";
 import { I18nProvider } from "./i18n";
+import { RegisterModalProvider } from "./context/RegisterModalContext";
+import { CheckoutProvider } from "./checkout/CheckoutContext";
+import ScrollToTop from "./components/ScrollToTop";
 import "./index.css";
 
-// Core marketing + course pages
-const Home = lazy(() => import("./designs/one/CinematicScroll.tsx"));
+// Core marketing (instant mount on initial paint) + course pages (code-split)
+import Home from "./designs/one/CinematicScroll.tsx";
 const Valorant = lazy(() => import("./pages/valorant/ValorantA.tsx"));
 const BGMI = lazy(() => import("./pages/bgmi/BGMI.tsx"));
 const Coaching = lazy(() => import("./pages/careers/Coaching.tsx"));
@@ -54,40 +57,58 @@ const gated = (el: ReactNode) => (
   </Suspense>
 );
 
+function RootLayout() {
+  return (
+    <>
+      <ScrollToTop />
+      <Outlet />
+    </>
+  );
+}
+
 const router = createBrowserRouter([
-  { path: "/", element: page(<Home />) },
-  { path: "/valorant", element: page(<Valorant />) },
-  { path: "/bgmi", element: page(<BGMI />) },
-  { path: "/coaching", element: page(<Coaching />) },
-  { path: "/tournament-ops", element: page(<TournamentOps />) },
+  {
+    element: <RootLayout />,
+    children: [
+      { path: "/", element: <Home /> },
+      { path: "/valorant", element: page(<Valorant />) },
+      { path: "/bgmi", element: page(<BGMI />) },
+      { path: "/coaching", element: page(<Coaching />) },
+      { path: "/tournament-ops", element: page(<TournamentOps />) },
 
-  // Checkout + legal
-  { path: "/thanks", element: page(<Thanks />) },
-  { path: "/terms", element: page(<LegalPage slug="terms" />) },
-  { path: "/privacy", element: page(<LegalPage slug="privacy" />) },
-  { path: "/refunds", element: page(<LegalPage slug="refunds" />) },
-  { path: "/contact", element: page(<LegalPage slug="contact" />) },
+      // Checkout + legal
+      { path: "/thanks", element: page(<Thanks />) },
+      { path: "/terms", element: page(<LegalPage slug="terms" />) },
+      { path: "/privacy", element: page(<LegalPage slug="privacy" />) },
+      { path: "/refunds", element: page(<LegalPage slug="refunds" />) },
+      { path: "/contact", element: page(<LegalPage slug="contact" />) },
 
-  // Talent directory (gated pre-launch)
-  { path: "/talent", element: gated(<Directory />) },
-  { path: "/talent/claim/:token", element: gated(<Claim />) },
-  { path: "/talent/edit", element: gated(<Edit />) },
-  { path: "/talent/:handle", element: gated(<Profile />) },
-  { path: "/verify/:id", element: gated(<Verify />) },
-  { path: "/admin", element: gated(<Admin />) },
+      // Talent directory (gated pre-launch)
+      { path: "/talent", element: gated(<Directory />) },
+      { path: "/talent/claim/:token", element: gated(<Claim />) },
+      { path: "/talent/edit", element: gated(<Edit />) },
+      { path: "/talent/:handle", element: gated(<Profile />) },
+      { path: "/verify/:id", element: gated(<Verify />) },
+      { path: "/admin", element: gated(<Admin />) },
 
-  // Preserve compatibility with earlier course URLs.
-  { path: "/valorant/a", element: <Navigate to="/valorant" replace /> },
-  { path: "/valorant/b", element: <Navigate to="/valorant" replace /> },
+      // Preserve compatibility with earlier course URLs.
+      { path: "/valorant/a", element: <Navigate to="/valorant" replace /> },
+      { path: "/valorant/b", element: <Navigate to="/valorant" replace /> },
 
-  // Branded 404
-  { path: "*", element: page(<NotFound />) },
+      // Branded 404
+      { path: "*", element: page(<NotFound />) },
+    ],
+  },
 ]);
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <I18nProvider>
-      <RouterProvider router={router} />
+      <RegisterModalProvider>
+        <CheckoutProvider>
+          <RouterProvider router={router} />
+        </CheckoutProvider>
+      </RegisterModalProvider>
     </I18nProvider>
   </StrictMode>
 );

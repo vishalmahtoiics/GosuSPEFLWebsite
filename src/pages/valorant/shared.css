@@ -3,29 +3,100 @@
    Page-specific layout lives in a.css. */
 
 .vpage {
-  --red: #ff4655;
-  --red-deep: #d5313d;
-  --red-bright: #ff6b76;
-  background: var(--ink);
-  color: #fff;
+  --red: #dc2626;
+  --red-deep: #b91c1c;
+  --red-bright: #ef4444;
+  background:
+    /* subtle tech grid overlay */
+    linear-gradient(rgba(15, 23, 42, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 23, 42, 0.022) 1px, transparent 1px),
+    /* faint diagonal accent lines */
+    repeating-linear-gradient(
+      135deg,
+      transparent,
+      transparent 120px,
+      rgba(180, 83, 9, 0.018) 120px,
+      rgba(180, 83, 9, 0.018) 121px
+    ),
+    /* base gradient instead of flat white */
+    linear-gradient(
+      180deg,
+      #f8fafc 0%,
+      #f1f4f9 35%,
+      #eef1f6 65%,
+      #f8fafc 100%
+    );
+  background-size:
+    48px 48px,
+    48px 48px,
+    170px 170px,
+    100% 100%;
+  color: var(--text-primary);
   font-family: var(--font-body);
   overflow: clip;
 }
 
-/* ── kicker ─────────────────────────────────────────── */
+/* ── kicker (matches the homepage pill & radar dot language) ─────────────────── */
 .vk {
   font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.34em;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--gold);
+  color: #b45309;
+  background: rgba(245, 158, 11, 0.12);
+  border: 1.5px solid rgba(217, 119, 6, 0.35);
+  padding: 4px 12px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 8px;
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.1);
+  line-height: 1.2;
 }
-.vk--red {
-  color: var(--red);
+.vk::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: currentColor;
+  box-shadow: 0 0 6px currentColor;
+  animation: pulse-radar 1.8s infinite;
+  flex-shrink: 0;
 }
-.vk--cobalt {
-  color: color-mix(in srgb, var(--cobalt), white 26%);
+.vk--red,
+.valorant .vk {
+  color: #dc2626;
+  background: rgba(220, 38, 38, 0.1);
+  border-color: rgba(220, 38, 38, 0.35);
+  box-shadow: 0 0 12px rgba(220, 38, 38, 0.1);
+}
+.vk--cobalt,
+.coaching .vk {
+  color: #0284c7;
+  background: rgba(2, 132, 199, 0.1);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 0 12px rgba(2, 132, 199, 0.1);
+}
+.bgmi .vk {
+  color: #ca8a04;
+  background: rgba(234, 179, 8, 0.12);
+  border-color: rgba(202, 138, 4, 0.35);
+  box-shadow: 0 0 12px rgba(234, 179, 8, 0.1);
+}
+.tourney .vk {
+  color: #059669;
+  background: rgba(5, 150, 105, 0.1);
+  border-color: rgba(5, 150, 105, 0.35);
+  box-shadow: 0 0 12px rgba(5, 150, 105, 0.1);
+}
+
+@keyframes pulse-radar {
+  0% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.8); }
+  70% { transform: scale(1.15); box-shadow: 0 0 0 9px rgba(245, 158, 11, 0); }
+  100% { transform: scale(0.9); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0); }
 }
 
 /* ── buttons (angular clip, matches the homepage language) ── */
@@ -67,27 +138,28 @@
 .vbtn--red {
   background: linear-gradient(135deg, var(--red-bright), var(--red-deep));
   color: #fff;
-  box-shadow: 0 0 0 rgba(255, 70, 85, 0);
+  box-shadow: 0 4px 14px rgba(220, 38, 38, 0.25);
 }
 .vbtn--red:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(255, 70, 85, 0.4);
+  box-shadow: 0 14px 40px rgba(220, 38, 38, 0.35);
 }
 .vbtn--gold {
   background: linear-gradient(135deg, var(--gold-bright), var(--gold-deep));
-  color: #15100a;
+  color: #ffffff;
 }
 .vbtn--gold:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 40px rgba(217, 171, 77, 0.38);
+  box-shadow: 0 14px 40px rgba(180, 83, 9, 0.35);
 }
 .vbtn--ghost {
-  border: 1px solid rgba(255, 255, 255, 0.26);
-  color: #fff;
+  border: 1px solid #cbd5e1;
+  color: #0f172a;
+  background: #ffffff;
 }
 .vbtn--ghost:hover {
-  border-color: #fff;
-  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--red);
+  background: #fef2f2;
 }
 
 /* ── co-brand lockup line ───────────────────────────── */
@@ -99,11 +171,11 @@
   font-size: 12px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: #64748b;
   flex-wrap: wrap;
 }
 .vlockup b {
-  color: #fff;
+  color: #0f172a;
   font-weight: 600;
 }
 .vlockup i {
@@ -179,13 +251,15 @@
 
 /* ── shared footer ──────────────────────────────────── */
 .vfoot {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  border-top: 1px solid #e2e8f0;
   padding: 40px clamp(20px, 6vw, 90px);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 24px;
   flex-wrap: wrap;
+  background: #ffffff;
+  color: #475569;
 }
 .vfoot__brand {
   display: flex;
@@ -194,13 +268,159 @@
   font-family: var(--font-display);
   font-weight: 700;
   letter-spacing: 0.04em;
+  color: #0f172a;
 }
 .vfoot__disclaimer {
   max-width: 64ch;
   font-size: 11.5px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.38);
+  color: #64748b;
 }
 .vfoot__legal { display: flex; gap: 14px; }
-.vfoot__legal a { color: rgba(239, 236, 230, 0.45); text-decoration: none; font-size: 12px; }
-.vfoot__legal a:hover { color: #d9ab4d; }
+.vfoot__legal a { color: #64748b; text-decoration: none; font-size: 12px; }
+.vfoot__legal a:hover { color: var(--gold); }
+
+/* ── MRP & Discount Badges in Pricing ────────────────── */
+.va-price__badge-row,
+.va-price__mrp-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.va-price__badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  background: #dcfce7;
+  border: 1px solid #bbf7d0;
+  color: #15803d;
+}
+.va-price__compare {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 12px 18px;
+}
+.va-price__mrp {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(34px, 4.4vw, 50px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #94a3b8;
+  text-decoration: line-through;
+  text-decoration-color: #ef4444;
+  text-decoration-thickness: 3.5px;
+}
+.va-price__current {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(34px, 4.4vw, 50px);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+}
+.va-price__current small {
+  font-family: var(--font-mono);
+  font-size: 0.35em;
+  font-weight: 600;
+  color: #64748b;
+  letter-spacing: 0.04em;
+}
+
+/* ── Squad Rate Card (Shared) ────────────────────────── */
+.bg-squad {
+  position: relative;
+  z-index: 1;
+  margin-top: clamp(28px, 4vw, 44px);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding: 24px 30px;
+  border: 1px solid #cbd5e1;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.05);
+}
+.val-squad {
+  border-color: #fca5a5;
+  background: #ffffff;
+  box-shadow: 0 4px 16px rgba(220, 38, 38, 0.06);
+}
+.bg-squad__tag {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--red);
+}
+.bg-squad__main {
+  flex: 1;
+  min-width: 220px;
+}
+.bg-squad__main strong {
+  display: block;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(18px, 2vw, 24px);
+  color: #0f172a;
+}
+.bg-squad__main p {
+  margin-top: 4px;
+  font-size: 14px;
+  color: #475569;
+}
+.bg-squad__pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.bg-squad__mrp {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: #94a3b8;
+  text-decoration: line-through;
+  text-decoration-color: rgba(220, 38, 38, 0.7);
+}
+.bg-squad__amt {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 42px);
+  line-height: 1;
+  color: var(--red);
+}
+.bg-squad__amt small {
+  font-size: 0.34em;
+  color: #64748b;
+  margin-left: 4px;
+}
+.bg-squad__cta {
+  flex-shrink: 0;
+}
+@media (max-width: 768px) {
+  .bg-squad {
+    padding: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .bg-squad__pricing {
+    align-items: flex-start;
+  }
+  .bg-squad__cta {
+    width: 100%;
+    min-height: 48px;
+  }
+}
